@@ -1,14 +1,14 @@
 {
   "personalInfo": {
-    "name": "Your Name",
-    "title": "Web Developer & Designer",
-    "bio": "I'm a passionate web developer focused on creating elegant, responsive websites and applications.",
-    "calendlyUsername": "your-calendly-username",
-    "contactEmail": "your.email@example.com",
+    "name": "Freddy Suarez",
+    "title": "Senior/Lead QA Automation Engineer",
+    "bio": "Senior SDET with 5+ years experience in test automation. Expert in TypeScript, Playwright, Java, and API testing. Proven leadership driving CI/CD implementation and software quality through strategic testing. Quick adopter of new technologies.",
+    "location": "Montevideo, Uruguay",
+    "calendlyUsername": "freddysuarez",
+    "contactEmail": "contact@freddysuarez.com",
     "socialLinks": {
-      "github": "https://github.com/yourusername",
-      "linkedin": "https://linkedin.com/in/yourusername",
-      "twitter": "https://twitter.com/yourusername"
+      "github": "https://github.com/freddysuarez",
+      "linkedin": "https://linkedin.com/in/freddysuarez"
     }
   },
   "navigation": [
@@ -17,12 +17,20 @@
       "url": "#about"
     },
     {
-      "text": "Projects",
-      "url": "#projects"
+      "text": "Experience",
+      "url": "#experience"
     },
     {
       "text": "Skills",
       "url": "#skills"
+    },
+    {
+      "text": "Education",
+      "url": "#education"
+    },
+    {
+      "text": "Projects",
+      "url": "#projects"
     },
     {
       "text": "Contact",
@@ -31,91 +39,132 @@
   ],
   "projects": [
     {
-      "title": "Project 1",
-      "description": "Detailed description of project 1. What technologies did you use? What problems did you solve?",
+      "title": "E2E Automation Framework",
+      "description": "Developed a comprehensive end-to-end testing framework using TypeScript and Playwright that achieved 85% test coverage. The framework included parallel test execution, detailed reporting, and cross-browser compatibility.",
       "image": "",
-      "tags": ["HTML", "CSS", "JavaScript"],
-      "liveUrl": "https://project1-demo.com",
-      "githubUrl": "https://github.com/yourusername/project1"
+      "tags": ["TypeScript", "Playwright", "CI/CD", "Testing"],
+      "liveUrl": "",
+      "githubUrl": ""
     },
     {
-      "title": "Project 2",
-      "description": "Detailed description of project 2. What technologies did you use? What problems did you solve?",
+      "title": "API Testing Framework",
+      "description": "Created a robust API testing solution using Java, Cucumber, and Rest Assured for a fintech payment solution. Implemented monitoring for critical endpoints that reduced incident response time by 30%.",
       "image": "",
-      "tags": ["React", "Node.js", "MongoDB"],
-      "liveUrl": "https://project2-demo.com",
-      "githubUrl": "https://github.com/yourusername/project2"
+      "tags": ["Java", "Cucumber", "Rest Assured", "API Testing"],
+      "liveUrl": "",
+      "githubUrl": ""
     },
     {
-      "title": "Project 3",
-      "description": "Detailed description of project 3. What technologies did you use? What problems did you solve?",
+      "title": "CI/CD Pipeline Integration",
+      "description": "Designed and implemented a CI/CD pipeline with Harness for automated test execution across multiple environments, leading to faster feedback loops and more reliable deployments.",
       "image": "",
-      "tags": ["Vue.js", "Express", "PostgreSQL"],
-      "liveUrl": "https://project3-demo.com",
-      "githubUrl": "https://github.com/yourusername/project3"
+      "tags": ["CI/CD", "Harness", "DevOps", "Automation"],
+      "liveUrl": "",
+      "githubUrl": ""
     }
   ],
   "skills": [
     {
-      "category": "Frontend",
-      "items": ["HTML5", "CSS3", "JavaScript", "React", "Vue.js", "Angular", "Responsive Design", "Sass/SCSS", "Bootstrap", "Tailwind CSS"]
+      "category": "Testing",
+      "items": ["Playwright", "TypeScript", "Selenium", "Rest Assured", "Postman", "JMeter", "Cucumber", "Test Automation", "Test Architecture", "Performance Testing"]
     },
     {
-      "category": "Backend",
-      "items": ["Node.js", "Express", "Python", "Django", "PHP", "Laravel", "RESTful APIs", "GraphQL"]
+      "category": "Programming Languages",
+      "items": ["TypeScript", "JavaScript", "Java", "C#"]
     },
     {
-      "category": "Database",
-      "items": ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Redis"]
+      "category": "DevOps & CI/CD",
+      "items": ["Jenkins", "Azure DevOps", "Harness", "Docker", "GCP", "AWS", "CI/CD Pipelines"]
     },
     {
-      "category": "DevOps & Tools",
-      "items": ["Git", "GitHub", "Docker", "AWS", "Heroku", "Netlify", "Webpack", "NPM/Yarn", "VS Code"]
+      "category": "Databases",
+      "items": ["MySQL", "SQL Server", "PostgreSQL"]
+    },
+    {
+      "category": "Tools & Methodologies",
+      "items": ["Jira", "Agile methodologies", "Zephyr", "XRay", "Test Management", "Technical Leadership", "Mentoring"]
     }
   ],
   "education": [
     {
-      "degree": "Your Degree",
-      "institution": "Your University/Institution",
-      "year": "20XX - 20XX",
-      "description": "Brief description of your studies, achievements, etc."
+      "degree": "ISTQB Certified Tester Advanced Level - Technical Test Analyst",
+      "institution": "ISTQB",
+      "year": "Nov 2023",
+      "description": "Advanced certification in technical test analysis techniques and methodologies."
+    },
+    {
+      "degree": "ISTQB Certified Tester Foundation Level",
+      "institution": "ISTQB",
+      "year": "Nov 2022",
+      "description": "Certification covering fundamental concepts and principles of software testing."
+    },
+    {
+      "degree": "Java Developer",
+      "institution": "Technical Institute",
+      "year": "2019",
+      "description": "Professional training in Java development, including frameworks and best practices."
+    },
+    {
+      "degree": "Mechanical Engineering",
+      "institution": "Engineering University",
+      "year": "2012",
+      "description": "Bachelor's degree in Mechanical Engineering, providing a strong analytical foundation."
     }
   ],
   "experience": [
     {
-      "position": "Job Title",
-      "company": "Company Name",
-      "location": "City, Country",
-      "period": "Month 20XX - Present",
-      "description": "Describe your responsibilities and achievements in this role."
+      "position": "Senior SDET",
+      "company": "Virtual Data Room Provider",
+      "location": "Montevideo, Uruguay",
+      "period": "Apr 2023 - Present",
+      "description": "• Led TypeScript & Playwright implementation, reducing test time by 40% and improving cross-browser coverage\n• Architected E2E automation framework with TypeScript/Playwright, achieving 85% test coverage\n• Implemented CI/CD with Harness for automated test execution across environments\n• Mentored 4 SDETs, conducting code reviews and TypeScript best practices training\n• Collaborated with product owners to align test strategies with business objectives"
     },
     {
-      "position": "Previous Job Title",
-      "company": "Previous Company Name",
-      "location": "City, Country",
-      "period": "Month 20XX - Month 20XX",
-      "description": "Describe your responsibilities and achievements in this role."
+      "position": "QA Automation Engineer",
+      "company": "Fintech Payment Solutions",
+      "location": "Montevideo, Uruguay",
+      "period": "May 2022 - Apr 2023",
+      "description": "• Developed API testing framework using Java, Cucumber, and Rest Assured\n• Implemented TypeScript monitoring for critical API endpoints, reducing incident response by 30%\n• Automated test execution in cloud environments using Docker\n• Enhanced reporting systems with Google Chat Group notifications"
+    },
+    {
+      "position": "QA Automation Tester",
+      "company": "Banking Software Solutions",
+      "location": "Montevideo, Uruguay",
+      "period": "Mar 2021 - Nov 2022",
+      "description": "• Created custom test frameworks with C#/Java and Selenium WebDriver\n• Built reusable test components to improve framework maintainability"
+    },
+    {
+      "position": "Java Developer",
+      "company": "Independent Consulting",
+      "location": "Montevideo, Uruguay",
+      "period": "Mar 2018 - Apr 2021",
+      "description": "• Developed RESTful APIs and UI using Java, Spring Boot, React, and PostgreSQL"
     }
   ],
   "testimonials": [
     {
-      "text": "Quote from a client or colleague about your work.",
-      "author": "Client/Colleague Name",
-      "position": "Their Position, Company"
+      "text": "Freddy's implementation of our test automation framework transformed our testing capabilities. His expertise in TypeScript and Playwright significantly improved our product quality.",
+      "author": "Development Lead",
+      "position": "Virtual Data Room Provider"
+    },
+    {
+      "text": "Working with Freddy on our API testing strategy was a game-changer. His technical knowledge and leadership skills helped our team deliver more reliable software.",
+      "author": "Project Manager",
+      "position": "Fintech Payment Solutions"
     }
   ],
   "siteSettings": {
     "theme": {
-      "primaryColor": "#0078ff",
-      "secondaryColor": "#141e30",
-      "accentColor": "#66b2ff",
-      "textColor": "#333",
-      "lightBackgroundColor": "#f9f9f9"
+      "primaryColor": "#1E88E5",
+      "secondaryColor": "#1A237E",
+      "accentColor": "#42A5F5",
+      "textColor": "#333333",
+      "lightBackgroundColor": "#F5F7FA"
     },
     "metaTags": {
-      "title": "Your Name - Web Developer & Designer",
-      "description": "Professional portfolio showcasing web development and design projects",
-      "keywords": "web developer, frontend, backend, portfolio, projects"
+      "title": "Freddy Suarez - Senior/Lead QA Automation Engineer",
+      "description": "Professional portfolio of Freddy Suarez, an experienced SDET specializing in test automation with TypeScript, Playwright, and Java",
+      "keywords": "QA automation, SDET, TypeScript, Playwright, Java, test automation, CI/CD, API testing"
     }
   }
 }
