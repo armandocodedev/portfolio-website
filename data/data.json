@@ -1,0 +1,121 @@
+{
+  "personalInfo": {
+    "name": "Your Name",
+    "title": "Web Developer & Designer",
+    "bio": "I'm a passionate web developer focused on creating elegant, responsive websites and applications.",
+    "calendlyUsername": "your-calendly-username",
+    "contactEmail": "your.email@example.com",
+    "socialLinks": {
+      "github": "https://github.com/yourusername",
+      "linkedin": "https://linkedin.com/in/yourusername",
+      "twitter": "https://twitter.com/yourusername"
+    }
+  },
+  "navigation": [
+    {
+      "text": "About",
+      "url": "#about"
+    },
+    {
+      "text": "Projects",
+      "url": "#projects"
+    },
+    {
+      "text": "Skills",
+      "url": "#skills"
+    },
+    {
+      "text": "Contact",
+      "url": "#contact"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project 1",
+      "description": "Detailed description of project 1. What technologies did you use? What problems did you solve?",
+      "image": "",
+      "tags": ["HTML", "CSS", "JavaScript"],
+      "liveUrl": "https://project1-demo.com",
+      "githubUrl": "https://github.com/yourusername/project1"
+    },
+    {
+      "title": "Project 2",
+      "description": "Detailed description of project 2. What technologies did you use? What problems did you solve?",
+      "image": "",
+      "tags": ["React", "Node.js", "MongoDB"],
+      "liveUrl": "https://project2-demo.com",
+      "githubUrl": "https://github.com/yourusername/project2"
+    },
+    {
+      "title": "Project 3",
+      "description": "Detailed description of project 3. What technologies did you use? What problems did you solve?",
+      "image": "",
+      "tags": ["Vue.js", "Express", "PostgreSQL"],
+      "liveUrl": "https://project3-demo.com",
+      "githubUrl": "https://github.com/yourusername/project3"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["HTML5", "CSS3", "JavaScript", "React", "Vue.js", "Angular", "Responsive Design", "Sass/SCSS", "Bootstrap", "Tailwind CSS"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express", "Python", "Django", "PHP", "Laravel", "RESTful APIs", "GraphQL"]
+    },
+    {
+      "category": "Database",
+      "items": ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Redis"]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": ["Git", "GitHub", "Docker", "AWS", "Heroku", "Netlify", "Webpack", "NPM/Yarn", "VS Code"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Your Degree",
+      "institution": "Your University/Institution",
+      "year": "20XX - 20XX",
+      "description": "Brief description of your studies, achievements, etc."
+    }
+  ],
+  "experience": [
+    {
+      "position": "Job Title",
+      "company": "Company Name",
+      "location": "City, Country",
+      "period": "Month 20XX - Present",
+      "description": "Describe your responsibilities and achievements in this role."
+    },
+    {
+      "position": "Previous Job Title",
+      "company": "Previous Company Name",
+      "location": "City, Country",
+      "period": "Month 20XX - Month 20XX",
+      "description": "Describe your responsibilities and achievements in this role."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Quote from a client or colleague about your work.",
+      "author": "Client/Colleague Name",
+      "position": "Their Position, Company"
+    }
+  ],
+  "siteSettings": {
+    "theme": {
+      "primaryColor": "#0078ff",
+      "secondaryColor": "#141e30",
+      "accentColor": "#66b2ff",
+      "textColor": "#333",
+      "lightBackgroundColor": "#f9f9f9"
+    },
+    "metaTags": {
+      "title": "Your Name - Web Developer & Designer",
+      "description": "Professional portfolio showcasing web development and design projects",
+      "keywords": "web developer, frontend, backend, portfolio, projects"
+    }
+  }
+}
