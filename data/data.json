@@ -4,11 +4,11 @@
     "title": "Senior/Lead QA Automation Engineer",
     "bio": "Senior SDET with 5+ years experience in test automation. Expert in TypeScript, Playwright, Java, and API testing. Proven leadership driving CI/CD implementation and software quality through strategic testing. Quick adopter of new technologies.",
     "location": "Montevideo, Uruguay",
-    "calendlyUsername": "freddysuarez",
-    "contactEmail": "contact@freddysuarez.com",
+    "calendlyUsername": "armandocodedev",
+    "contactEmail": "armandocodedev@gmail.com",
     "socialLinks": {
-      "github": "https://github.com/freddysuarez",
-      "linkedin": "https://linkedin.com/in/freddysuarez"
+      "github": "https://github.com/armandocodedev",
+      "linkedin": "https://www.linkedin.com/in/freddy-armando-suarez"
     }
   },
   "navigation": [
@@ -143,12 +143,12 @@
   ],
   "testimonials": [
     {
-      "text": "Freddy's implementation of our test automation framework transformed our testing capabilities. His expertise in TypeScript and Playwright significantly improved our product quality.",
-      "author": "Development Lead",
+      "text": "I highly recommend Freddy as a sr. SDET or Testing Lead. Having had the pleasure of working closely with Freddy, I can attest to his exceptional skills, dedication, and leadership abilities in the realm of software testing and quality assurance. During his time on my team, he consistently demonstrated a deep understanding of software development methodologies, testing techniques, and quality assurance best practices. Freddy was instrumental in developing and implementing comprehensive testing strategies that significantly improved product quality and reduced defects.",
+      "author": "Team Lead",
       "position": "Virtual Data Room Provider"
     },
     {
-      "text": "Working with Freddy on our API testing strategy was a game-changer. His technical knowledge and leadership skills helped our team deliver more reliable software.",
+      "text": "I have had the pleasure of working with Freddy Suarez for over a year on one of the critical initiatives. He is a very talented and skilled QA automation engineer for both UI/UX and API automation. He has a unique ability of understanding the business requirements and driving the automation strategy and shares his ideas with the team in arriving at solutions. He is very calm and gets to the source of the issues, takes ownership and implements the solution.",
       "author": "Project Manager",
       "position": "Fintech Payment Solutions"
     }
