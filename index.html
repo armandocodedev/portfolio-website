@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Professional Portfolio</title>
+    <meta name="description" content="Professional portfolio showcasing web development and design projects">
+    <meta name="keywords" content="web developer, frontend, backend, portfolio, projects">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Your Name</div>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- Navigation links will be loaded from JSON -->
             </ul>
         </nav>
         <div class="hero">
@@ -23,41 +23,47 @@
         </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="fade-in">
         <h2>About Me</h2>
         <p>I'm a passionate web developer focused on creating elegant, responsive websites and applications.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="slide-in-right">
         <h2>My Projects</h2>
         <div class="project-grid">
-            <!-- Project entries will go here -->
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Description of project goes here.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of project goes here.</p>
-            </div>
+            <!-- Project entries will be loaded from JSON -->
         </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="slide-in-left">
         <h2>Skills</h2>
-        <ul class="skills-list">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <!-- Add more skills as needed -->
-        </ul>
+        <!-- Skills will be loaded from JSON -->
     </section>
 
-    <section id="contact">
+    <section id="experience" class="fade-in">
+        <h2>Work Experience</h2>
+        <!-- Experience will be loaded from JSON -->
+    </section>
+
+    <section id="education" class="fade-in">
+        <h2>Education</h2>
+        <!-- Education will be loaded from JSON -->
+    </section>
+
+    <section id="testimonials" class="slide-in-right">
+        <h2>What People Say</h2>
+        <!-- Testimonials will be loaded from JSON -->
+    </section>
+
+    <section id="contact" class="fade-in">
         <h2>Contact Me</h2>
-        <p>Interested in working together? Schedule a call with me.</p>
-        <!-- Calendly integration will go here -->
+        <div class="contact-info">
+            <p>Interested in working together? Connect with me or schedule a call.</p>
+            <div class="social-links">
+                <!-- Social links will be loaded from JSON -->
+            </div>
+        </div>
+        <!-- Calendly integration will be loaded from JSON -->
         <div class="calendly-placeholder">
             [Calendly Integration Placeholder]
         </div>
