@@ -40,7 +40,7 @@
   "projects": [
     {
       "title": "E2E Automation Framework",
-      "description": "Developed a comprehensive end-to-end testing framework using TypeScript and Playwright that achieved 85% test coverage. The framework included parallel test execution, detailed reporting, and cross-browser compatibility.",
+      "description": "Developed a comprehensive end-to-end testing framework using TypeScript and Playwright. The framework included parallel test execution, detailed reporting, and cross-browser compatibility.",
       "image": "",
       "tags": ["TypeScript", "Playwright", "CI/CD", "Testing"],
       "liveUrl": "",
@@ -48,17 +48,17 @@
     },
     {
       "title": "API Testing Framework",
-      "description": "Created a robust API testing solution using Java, Cucumber, and Rest Assured for a fintech payment solution. Implemented monitoring for critical endpoints that reduced incident response time by 30%.",
+      "description": "Maintained a robust API testing solution using Java, Cucumber, and Rest Assured for a fintech payment solution. Implemented monitoring for critical endpoints that improved incident response time.",
       "image": "",
       "tags": ["Java", "Cucumber", "Rest Assured", "API Testing"],
       "liveUrl": "",
       "githubUrl": ""
     },
     {
-      "title": "CI/CD Pipeline Integration",
-      "description": "Designed and implemented a CI/CD pipeline with Harness for automated test execution across multiple environments, leading to faster feedback loops and more reliable deployments.",
+      "title": "Custom Test Automation Framework",
+      "description": "Maintained and enhanced robust test automation frameworks using C#/Java with Selenium WebDriver. Created reusable components to improve framework maintainability, resulting in faster test creation and more reliable test execution across multiple environments.",
       "image": "",
-      "tags": ["CI/CD", "Harness", "DevOps", "Automation"],
+      "tags": ["C#", "Java", "Selenium WebDriver", "Test Automation", "Framework Design"],
       "liveUrl": "",
       "githubUrl": ""
     }
@@ -117,15 +117,13 @@
       "company": "Virtual Data Room Provider",
       "location": "Montevideo, Uruguay",
       "period": "Apr 2023 - Present",
-      "description": "• Led TypeScript & Playwright implementation, reducing test time by 40% and improving cross-browser coverage\n• Architected E2E automation framework with TypeScript/Playwright, achieving 85% test coverage\n• Implemented CI/CD with Harness for automated test execution across environments\n• Mentored 4 SDETs, conducting code reviews and TypeScript best practices training\n• Collaborated with product owners to align test strategies with business objectives"
-    },
+   "description": "• Led TypeScript & Playwright implementation, reducing test time and improving cross-browser coverage\n• Architected E2E automation framework with TypeScript/Playwright to ensure comprehensive test coverage\n• Implemented CI/CD with Harness for automated test execution across environments\n• Mentored SDETs, conducting code reviews and TypeScript best practices training\n• Collaborated with product owners to align test strategies with business objectives"    },
     {
       "position": "QA Automation Engineer",
       "company": "Fintech Payment Solutions",
       "location": "Montevideo, Uruguay",
       "period": "May 2022 - Apr 2023",
-      "description": "• Developed API testing framework using Java, Cucumber, and Rest Assured\n• Implemented TypeScript monitoring for critical API endpoints, reducing incident response by 30%\n• Automated test execution in cloud environments using Docker\n• Enhanced reporting systems with Google Chat Group notifications"
-    },
+  "description": "• Developed API testing framework using Java, Cucumber, and Rest Assured\n• Implemented TypeScript monitoring for critical API endpoints, improving incident response time\n• Automated test execution in cloud environments using Docker\n• Enhanced reporting systems with Google Chat Group notifications"    },
     {
       "position": "QA Automation Tester",
       "company": "Banking Software Solutions",
