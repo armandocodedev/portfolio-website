@@ -1,12 +1,13 @@
 {
   "personalInfo": {
     "name": "Freddy Suarez",
-    "title": "Senior/Lead QA Automation Engineer",
-    "bio": "Senior SDET with 5+ years experience in test automation. Expert in TypeScript, Playwright, Java, and API testing. Proven leadership driving CI/CD implementation and software quality through strategic testing. Quick adopter of new technologies.",
+    "title": "Senior QA Automation Engineer | AI-Assisted Testing | Playwright | API Automation",
+    "heroHeadline": "QA Automation for Modern Product Teams",
+    "bio": "Senior SDET with 5+ years of experience designing automation strategies for web, API, and cloud delivery teams. I build maintainable Playwright and TypeScript frameworks, Java/Rest Assured API suites, CI/CD quality gates, and AI-assisted testing workflows that help teams discover risk faster and release with confidence.",
     "location": "Montevideo, Uruguay",
-    "calendlyUsername": "armandocodedev",
     "contactEmail": "armandocodedev@gmail.com",
     "socialLinks": {
+      "email": "mailto:armandocodedev@gmail.com",
       "github": "https://github.com/armandocodedev",
       "linkedin": "https://www.linkedin.com/in/freddy-armando-suarez"
     }
@@ -15,6 +16,14 @@
     {
       "text": "About",
       "url": "#about"
+    },
+    {
+      "text": "AI QA Lab",
+      "url": "#ai-lab"
+    },
+    {
+      "text": "Projects",
+      "url": "#projects"
     },
     {
       "text": "Experience",
@@ -29,60 +38,85 @@
       "url": "#education"
     },
     {
-      "text": "Projects",
-      "url": "#projects"
-    },
-    {
       "text": "Contact",
       "url": "#contact"
     }
   ],
+  "focusAreas": [
+    {
+      "title": "Agentic Test Generation",
+      "description": "Building AI browser agents that inspect live pages, explore user flows, generate Playwright specs, run them, and repair failures with controlled retry loops.",
+      "tags": ["OpenAI", "Playwright", "Node.js", "Prompt Engineering"]
+    },
+    {
+      "title": "Quality Intelligence Dashboards",
+      "description": "Creating portfolio-ready QA dashboards that summarize automation runs, agent decisions, generated tests, defects, reports, and roadmap progress for stakeholders.",
+      "tags": ["Static Dashboards", "GitHub Pages", "Test Reports", "CI Artifacts"]
+    },
+    {
+      "title": "Modern Release Quality",
+      "description": "Connecting E2E, API, smoke, monitoring, and scheduled tests into CI/CD pipelines so quality signals are visible before release and after deployment.",
+      "tags": ["Harness", "GitHub Actions", "Docker", "Cloud Testing"]
+    }
+  ],
   "projects": [
     {
-      "title": "E2E Automation Framework",
-      "description": "Developed a comprehensive end-to-end testing framework using TypeScript and Playwright. The framework included parallel test execution, detailed reporting, and cross-browser compatibility.",
+      "title": "Agentic Testing CLI",
+      "description": "AI-assisted testing project that uses a browser-driving agent to inspect live web pages, reason about safe next actions, generate Playwright tests from a natural-language goal, execute the suite, repair failures, and save run history for review.",
       "image": "",
-      "tags": ["TypeScript", "Playwright", "CI/CD", "Testing"],
+      "tags": ["OpenAI", "Playwright", "Node.js", "TypeScript-ready", "AI Agents", "Test Repair"],
+      "liveUrl": "",
+      "githubUrl": "https://github.com/armandocodedev/agentic-testing"
+    },
+    {
+      "title": "QA Dashboard Portfolio",
+      "description": "Public QA automation dashboard concept for presenting agentic testing work, demo flow summaries, generated reports, pipeline stages, and a roadmap for live multi-project quality reporting.",
+      "image": "",
+      "tags": ["GitHub Pages", "QA Reporting", "Automation Metrics", "Portfolio", "CI/CD"],
+      "liveUrl": "",
+      "githubUrl": "https://github.com/armandocodedev/qa-dashboard"
+    },
+    {
+      "title": "Enterprise Playwright Framework",
+      "description": "Designed and led a scalable E2E automation framework with TypeScript and Playwright, including cross-browser coverage, parallel execution, reusable fixtures, reliable reporting, and CI/CD execution across environments.",
+      "image": "",
+      "tags": ["TypeScript", "Playwright", "Fixtures", "CI/CD", "Cross-browser Testing"],
       "liveUrl": "",
       "githubUrl": ""
     },
     {
-      "title": "API Testing Framework",
-      "description": "Maintained a robust API testing solution using Java, Cucumber, and Rest Assured for a fintech payment solution. Implemented monitoring for critical endpoints that improved incident response time.",
+      "title": "API Automation & Monitoring",
+      "description": "Built and maintained API testing and monitoring solutions with Java, Cucumber, Rest Assured, Docker, and TypeScript endpoint checks for fintech payment workflows and production-critical services.",
       "image": "",
-      "tags": ["Java", "Cucumber", "Rest Assured", "API Testing"],
-      "liveUrl": "",
-      "githubUrl": ""
-    },
-    {
-      "title": "Custom Test Automation Framework",
-      "description": "Maintained and enhanced robust test automation frameworks using C#/Java with Selenium WebDriver. Created reusable components to improve framework maintainability, resulting in faster test creation and more reliable test execution across multiple environments.",
-      "image": "",
-      "tags": ["C#", "Java", "Selenium WebDriver", "Test Automation", "Framework Design"],
+      "tags": ["Java", "Rest Assured", "Cucumber", "Docker", "API Monitoring"],
       "liveUrl": "",
       "githubUrl": ""
     }
   ],
   "skills": [
     {
-      "category": "Testing",
-      "items": ["Playwright", "TypeScript", "Selenium", "Rest Assured", "Postman", "JMeter", "Cucumber", "Test Automation", "Test Architecture", "Performance Testing"]
+      "category": "AI-Assisted QA",
+      "items": ["Agentic Testing", "OpenAI API", "Prompt Engineering", "AI Test Generation", "AI Repair Loops", "Exploratory Test Agents", "Test Summarization"]
     },
     {
-      "category": "Programming Languages",
-      "items": ["TypeScript", "JavaScript", "Java", "C#"]
+      "category": "Automation Architecture",
+      "items": ["Playwright", "TypeScript", "Selenium WebDriver", "Framework Design", "Reusable Fixtures", "Page Objects", "Cross-browser Testing", "Parallel Execution"]
     },
     {
-      "category": "DevOps & CI/CD",
-      "items": ["Jenkins", "Azure DevOps", "Harness", "Docker", "GCP", "AWS", "CI/CD Pipelines"]
+      "category": "API & Performance Testing",
+      "items": ["Java", "Rest Assured", "Cucumber", "Postman", "JMeter", "Contract-focused Testing", "Endpoint Monitoring"]
     },
     {
-      "category": "Databases",
-      "items": ["MySQL", "SQL Server", "PostgreSQL"]
+      "category": "DevOps & Cloud",
+      "items": ["GitHub Actions", "Harness", "Azure DevOps", "Jenkins", "Docker", "GCP", "AWS", "CI/CD Quality Gates"]
     },
     {
-      "category": "Tools & Methodologies",
-      "items": ["Jira", "Agile methodologies", "Zephyr", "XRay", "Test Management", "Technical Leadership", "Mentoring"]
+      "category": "Engineering & Data",
+      "items": ["JavaScript", "C#", "Spring Boot", "React", "PostgreSQL", "MySQL", "SQL Server", "Git"]
+    },
+    {
+      "category": "Leadership",
+      "items": ["Test Strategy", "Technical Leadership", "Mentoring", "Code Reviews", "Agile Delivery", "Risk Analysis", "Stakeholder Communication"]
     }
   ],
   "education": [
@@ -90,25 +124,25 @@
       "degree": "ISTQB Certified Tester Advanced Level - Technical Test Analyst",
       "institution": "ISTQB",
       "year": "Nov 2023",
-      "description": "Advanced certification in technical test analysis techniques and methodologies."
+      "description": "Advanced certification in technical test analysis, risk-based testing, test design techniques, and quality engineering practices."
     },
     {
       "degree": "ISTQB Certified Tester Foundation Level",
       "institution": "ISTQB",
       "year": "Nov 2022",
-      "description": "Certification covering fundamental concepts and principles of software testing."
+      "description": "Certification covering core software testing principles, test process, defect lifecycle, and quality fundamentals."
     },
     {
       "degree": "Java Developer",
       "institution": "Technical Institute",
       "year": "2019",
-      "description": "Professional training in Java development, including frameworks and best practices."
+      "description": "Professional Java development training focused on object-oriented programming, backend services, and engineering best practices."
     },
     {
       "degree": "Mechanical Engineering",
       "institution": "Engineering University",
       "year": "2012",
-      "description": "Bachelor's degree in Mechanical Engineering, providing a strong analytical foundation."
+      "description": "Engineering background with a strong analytical foundation for systems thinking, problem solving, and process improvement."
     }
   ],
   "experience": [
@@ -117,52 +151,54 @@
       "company": "Virtual Data Room Provider",
       "location": "Montevideo, Uruguay",
       "period": "Apr 2023 - Present",
-   "description": "• Led TypeScript & Playwright implementation, reducing test time and improving cross-browser coverage\n• Architected E2E automation framework with TypeScript/Playwright to ensure comprehensive test coverage\n• Implemented CI/CD with Harness for automated test execution across environments\n• Mentored SDETs, conducting code reviews and TypeScript best practices training\n• Collaborated with product owners to align test strategies with business objectives"    },
+      "description": "Led TypeScript and Playwright adoption for enterprise E2E automation.\nArchitected framework patterns for fixtures, reusable flows, reporting, and cross-browser execution.\nIntegrated automated quality checks into Harness pipelines across environments.\nMentored SDETs through code reviews, TypeScript practices, and automation strategy.\nCollaborated with product owners and engineers to align test coverage with business risk."
+    },
     {
       "position": "QA Automation Engineer",
       "company": "Fintech Payment Solutions",
       "location": "Montevideo, Uruguay",
       "period": "May 2022 - Apr 2023",
-  "description": "• Developed API testing framework using Java, Cucumber, and Rest Assured\n• Implemented TypeScript monitoring for critical API endpoints, improving incident response time\n• Automated test execution in cloud environments using Docker\n• Enhanced reporting systems with Google Chat Group notifications"    },
+      "description": "Developed API automation with Java, Cucumber, and Rest Assured for payment workflows.\nImplemented TypeScript monitoring for critical endpoints to improve incident response.\nContainerized automated test execution with Docker for cloud environments.\nEnhanced reporting and notifications through Google Chat integrations."
+    },
     {
       "position": "QA Automation Tester",
       "company": "Banking Software Solutions",
       "location": "Montevideo, Uruguay",
       "period": "Mar 2021 - Nov 2022",
-      "description": "• Created custom test frameworks with C#/Java and Selenium WebDriver\n• Built reusable test components to improve framework maintainability"
+      "description": "Created custom UI automation frameworks with C#, Java, and Selenium WebDriver.\nBuilt reusable test components that improved maintainability and accelerated new coverage.\nSupported multi-environment validation for banking software delivery."
     },
     {
       "position": "Java Developer",
       "company": "Independent Consulting",
       "location": "Montevideo, Uruguay",
       "period": "Mar 2018 - Apr 2021",
-      "description": "• Developed RESTful APIs and UI using Java, Spring Boot, React, and PostgreSQL"
+      "description": "Developed RESTful APIs and UI features with Java, Spring Boot, React, and PostgreSQL.\nBuilt full-stack foundations that now inform stronger automation design and developer collaboration."
     }
   ],
   "testimonials": [
     {
-      "text": "I highly recommend Freddy as a sr. SDET or Testing Lead. Having had the pleasure of working closely with Freddy, I can attest to his exceptional skills, dedication, and leadership abilities in the realm of software testing and quality assurance. During his time on my team, he consistently demonstrated a deep understanding of software development methodologies, testing techniques, and quality assurance best practices. Freddy was instrumental in developing and implementing comprehensive testing strategies that significantly improved product quality and reduced defects.",
+      "text": "I highly recommend Freddy as a senior SDET or Testing Lead. He consistently demonstrated a deep understanding of software development methodologies, testing techniques, and quality assurance best practices. Freddy was instrumental in developing and implementing comprehensive testing strategies that significantly improved product quality and reduced defects.",
       "author": "Team Lead",
       "position": "Virtual Data Room Provider"
     },
     {
-      "text": "I have had the pleasure of working with Freddy Suarez for over a year on one of the critical initiatives. He is a very talented and skilled QA automation engineer for both UI/UX and API automation. He has a unique ability of understanding the business requirements and driving the automation strategy and shares his ideas with the team in arriving at solutions. He is very calm and gets to the source of the issues, takes ownership and implements the solution.",
+      "text": "Freddy is a very talented QA automation engineer for both UI and API automation. He understands business requirements, drives automation strategy, shares ideas with the team, takes ownership, and implements solutions with calm focus.",
       "author": "Project Manager",
       "position": "Fintech Payment Solutions"
     }
   ],
   "siteSettings": {
     "theme": {
-      "primaryColor": "#1E88E5",
-      "secondaryColor": "#1A237E",
-      "accentColor": "#42A5F5",
-      "textColor": "#333333",
-      "lightBackgroundColor": "#F5F7FA"
+      "primaryColor": "#0F766E",
+      "secondaryColor": "#111827",
+      "accentColor": "#F59E0B",
+      "textColor": "#1F2937",
+      "lightBackgroundColor": "#F3F4F6"
     },
     "metaTags": {
-      "title": "Freddy Suarez - Senior/Lead QA Automation Engineer",
-      "description": "Professional portfolio of Freddy Suarez, an experienced SDET specializing in test automation with TypeScript, Playwright, and Java",
-      "keywords": "QA automation, SDET, TypeScript, Playwright, Java, test automation, CI/CD, API testing"
+      "title": "Freddy Suarez - Senior QA Automation & AI Testing Engineer",
+      "description": "Freddy Suarez portfolio: Senior SDET specializing in Playwright, TypeScript, API automation, CI/CD, and AI-assisted testing workflows.",
+      "keywords": "QA automation, SDET, Playwright, TypeScript, OpenAI, AI testing, agentic testing, API testing, CI/CD, Rest Assured"
     }
   }
 }

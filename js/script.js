@@ -1,5 +1,7 @@
 // Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
+    initThemeToggle();
+
     // Load JSON data
     loadPortfolioData();
     
@@ -10,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load portfolio data from JSON file
 async function loadPortfolioData() {
     try {
-        const response = await fetch('/data/data.json');
+        const response = await fetch('data/data.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -20,16 +22,75 @@ async function loadPortfolioData() {
         // Update different sections with the loaded data
         updatePersonalInfo(data.personalInfo);
         updateNavigation(data.navigation);
+        updateFocusAreas(data.focusAreas);
         updateProjects(data.projects);
         updateSkills(data.skills);
         updateExperienceAndEducation(data.experience, data.education);
         updateTestimonials(data.testimonials);
         updateTheme(data.siteSettings.theme);
-        updateCalendly(data.personalInfo.calendlyUsername);
+        updateMetaTags(data.siteSettings.metaTags);
         
     } catch (error) {
         console.error('Error loading portfolio data:', error);
     }
+}
+
+// Initialize light/dark theme preference
+function initThemeToggle() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+    applyColorMode(initialTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', nextTheme);
+            applyColorMode(nextTheme);
+        });
+    }
+}
+
+function applyColorMode(theme) {
+    const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
+    const themeToggle = document.querySelector('.theme-toggle');
+
+    document.documentElement.dataset.theme = normalizedTheme;
+
+    if (themeToggle) {
+        const isDark = normalizedTheme === 'dark';
+        themeToggle.textContent = isDark ? 'Light' : 'Dark';
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+    }
+}
+
+// Update browser title and SEO metadata
+function updateMetaTags(metaTags) {
+    if (!metaTags) return;
+
+    if (metaTags.title) {
+        document.title = metaTags.title;
+    }
+
+    const metaMap = {
+        description: metaTags.description,
+        keywords: metaTags.keywords
+    };
+
+    Object.entries(metaMap).forEach(([name, content]) => {
+        if (!content) return;
+
+        let element = document.querySelector(`meta[name="${name}"]`);
+        if (!element) {
+            element = document.createElement('meta');
+            element.setAttribute('name', name);
+            document.head.appendChild(element);
+        }
+
+        element.setAttribute('content', content);
+    });
 }
 
 // Update personal information
@@ -45,7 +106,7 @@ function updatePersonalInfo(personalInfo) {
         const heroTitle = heroSection.querySelector('h1');
         const heroSubtitle = heroSection.querySelector('p');
         
-        if (heroTitle) heroTitle.textContent = `Welcome to ${personalInfo.name}'s Portfolio`;
+        if (heroTitle) heroTitle.textContent = personalInfo.heroHeadline || `${personalInfo.name} Portfolio`;
         if (heroSubtitle) heroSubtitle.textContent = personalInfo.title;
     }
     
@@ -79,14 +140,36 @@ function updatePersonalInfo(personalInfo) {
                     link.rel = 'noopener noreferrer';
                     link.classList.add('social-icon', platform);
                     link.setAttribute('aria-label', platform);
-                    
-                    // You can add icons here if you want
+                    link.textContent = platform.charAt(0).toUpperCase();
                     
                     socialContainer.appendChild(link);
                 }
             }
         }
     }
+}
+
+// Update AI QA Lab focus areas
+function updateFocusAreas(focusAreas) {
+    const focusGrid = document.querySelector('.focus-grid');
+    if (!focusGrid || !focusAreas || !focusAreas.length) return;
+
+    focusGrid.innerHTML = '';
+
+    focusAreas.forEach(area => {
+        const areaElement = document.createElement('article');
+        areaElement.classList.add('focus-card');
+
+        areaElement.innerHTML = `
+            <h3>${area.title}</h3>
+            <p>${area.description}</p>
+            <div class="project-tags">
+                ${(area.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+        `;
+
+        focusGrid.appendChild(areaElement);
+    });
 }
 
 // Update navigation menu
@@ -319,31 +402,6 @@ function updateTheme(theme) {
     
     // Add the style element to the head
     document.head.appendChild(style);
-}
-
-// Initialize Calendly
-function updateCalendly(username) {
-    if (!username) return;
-    
-    const calendlyPlaceholder = document.querySelector('.calendly-placeholder');
-    
-    if (calendlyPlaceholder) {
-        // Clear placeholder
-        calendlyPlaceholder.innerHTML = '';
-        
-        // Add Calendly widget
-        const calendlyScript = document.createElement('script');
-        calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
-        calendlyScript.async = true;
-        document.head.appendChild(calendlyScript);
-        
-        const calendlyWidget = document.createElement('div');
-        calendlyWidget.className = 'calendly-inline-widget';
-        calendlyWidget.style.minWidth = '320px';
-        calendlyWidget.style.height = '630px';
-        calendlyWidget.setAttribute('data-url', `https://calendly.com/${username}`);
-        calendlyPlaceholder.appendChild(calendlyWidget);
-    }
 }
 
 // Initialize smooth scrolling
