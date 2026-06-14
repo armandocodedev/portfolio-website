@@ -6,13 +6,21 @@
     <title>Freddy Suarez | Senior QA Automation & AI Testing Engineer</title>
     <meta name="description" content="Portfolio of Freddy Suarez, Senior QA Automation Engineer building Playwright, API, CI/CD, and AI-assisted testing systems.">
     <meta name="keywords" content="QA automation, SDET, Playwright, TypeScript, AI testing, agentic testing, API testing, CI/CD">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
+    <header id="top">
         <nav>
-            <div class="logo">Freddy Suarez</div>
+            <a class="logo brand-logo" href="#top" aria-label="Armando Code home">
+                <img class="brand-mark" src="assets/brand/armandocode-mark.svg" alt="" aria-hidden="true">
+                <img class="brand-wordmark brand-wordmark-light" src="assets/brand/armandocode-wordmark-light.svg" alt="" aria-hidden="true">
+                <img class="brand-wordmark brand-wordmark-dark" src="assets/brand/armandocode-wordmark-dark.svg" alt="" aria-hidden="true">
+                <span class="sr-only brand-name">Armando Code</span>
+            </a>
             <div class="nav-actions">
                 <ul>
                     <!-- Navigation links will be loaded from JSON -->
@@ -38,31 +46,18 @@
         </div>
     </section>
 
+    <section id="cv" class="fade-in">
+        <h2>CV Snapshot</h2>
+        <div class="resume-panel">
+            <!-- Resume summary and tech stack will be loaded from JSON -->
+        </div>
+    </section>
+
     <section id="projects" class="slide-in-right">
         <h2>Current Projects</h2>
         <div class="project-grid">
             <!-- Project entries will be loaded from JSON -->
         </div>
-    </section>
-
-    <section id="skills" class="slide-in-left">
-        <h2>Skills</h2>
-        <!-- Skills will be loaded from JSON -->
-    </section>
-
-    <section id="experience" class="fade-in">
-        <h2>Work Experience</h2>
-        <!-- Experience will be loaded from JSON -->
-    </section>
-
-    <section id="education" class="fade-in">
-        <h2>Education</h2>
-        <!-- Education will be loaded from JSON -->
-    </section>
-
-    <section id="testimonials" class="slide-in-right">
-        <h2>What People Say</h2>
-        <!-- Testimonials will be loaded from JSON -->
     </section>
 
     <section id="contact" class="fade-in">
@@ -76,9 +71,22 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Freddy Suarez. All rights reserved.</p>
+        <a href="privacy.html">Privacy & Cookies</a>
     </footer>
 
+    <div class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+        <div>
+            <strong>Analytics cookies</strong>
+            <p>I use Google Analytics to understand page visits and improve this portfolio. You can accept or reject analytics tracking.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-button secondary" type="button" data-cookie-choice="rejected">Reject</button>
+            <button class="cookie-button primary" type="button" data-cookie-choice="accepted">Accept analytics</button>
+        </div>
+    </div>
+
+    <script src="js/analytics.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

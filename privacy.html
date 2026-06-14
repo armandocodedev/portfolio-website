@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy & Cookies | Freddy Suarez</title>
+    <meta name="description" content="Privacy and cookie policy for Freddy Suarez's QA automation portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="index.html">Freddy Suarez</a>
+            <div class="nav-actions">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark</button>
+            </div>
+        </nav>
+        <div class="hero policy-hero">
+            <h1>Privacy & Cookies</h1>
+            <p>How this portfolio uses analytics and stores consent choices.</p>
+        </div>
+    </header>
+
+    <main class="policy-page">
+        <section>
+            <h2>Analytics</h2>
+            <p>This site uses Google Analytics 4 only after you accept analytics cookies. Analytics helps me understand how many people visit the page, which pages they view, and general technical information such as browser, device type, and approximate region.</p>
+            <p>Google Analytics does not give me your name, email address, or direct contact details. I do not sell analytics data.</p>
+        </section>
+
+        <section>
+            <h2>Your Choice</h2>
+            <p>You can reject analytics when the cookie banner appears. If you accepted before and want to choose again, use the button below.</p>
+            <button class="cookie-button secondary" type="button" data-reset-cookie-choice>Reset analytics choice</button>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <p>Questions about this policy can be sent to <a href="mailto:armandocodedev@gmail.com">armandocodedev@gmail.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Freddy Suarez. All rights reserved.</p>
+        <a href="index.html">Back to portfolio</a>
+    </footer>
+
+    <div class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+        <div>
+            <strong>Analytics cookies</strong>
+            <p>I use Google Analytics to understand page visits and improve this portfolio. You can accept or reject analytics tracking.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-button secondary" type="button" data-cookie-choice="rejected">Reject</button>
+            <button class="cookie-button primary" type="button" data-cookie-choice="accepted">Accept analytics</button>
+        </div>
+    </div>
+
+    <script src="js/analytics.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

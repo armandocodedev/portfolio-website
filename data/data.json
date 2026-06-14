@@ -1,5 +1,6 @@
 {
   "personalInfo": {
+    "brandName": "Armando Code",
     "name": "Freddy Suarez",
     "title": "Senior QA Automation Engineer | AI-Assisted Testing | Playwright | API Automation",
     "heroHeadline": "QA Automation for Modern Product Teams",
@@ -22,20 +23,12 @@
       "url": "#ai-lab"
     },
     {
+      "text": "CV",
+      "url": "#cv"
+    },
+    {
       "text": "Projects",
       "url": "#projects"
-    },
-    {
-      "text": "Experience",
-      "url": "#experience"
-    },
-    {
-      "text": "Skills",
-      "url": "#skills"
-    },
-    {
-      "text": "Education",
-      "url": "#education"
     },
     {
       "text": "Contact",
@@ -62,33 +55,37 @@
   "projects": [
     {
       "title": "Agentic Testing CLI",
-      "description": "AI-assisted testing project that uses a browser-driving agent to inspect live web pages, reason about safe next actions, generate Playwright tests from a natural-language goal, execute the suite, repair failures, and save run history for review.",
+      "description": "AI-assisted QA workflow that turns a natural-language testing goal into explored flows, generated Playwright coverage, execution feedback, repair attempts, and run history.",
       "image": "",
-      "tags": ["OpenAI", "Playwright", "Node.js", "TypeScript-ready", "AI Agents", "Test Repair"],
+      "tags": ["Explore", "Generate", "Execute", "Repair", "Report"],
+      "outcomes": ["Browser-driving AI agent", "Playwright spec generation", "Failure repair loop", "Run history for review"],
       "liveUrl": "",
-      "githubUrl": "https://github.com/armandocodedev/agentic-testing"
+      "githubUrl": ""
     },
     {
-      "title": "QA Dashboard Portfolio",
-      "description": "Public QA automation dashboard concept for presenting agentic testing work, demo flow summaries, generated reports, pipeline stages, and a roadmap for live multi-project quality reporting.",
+      "title": "Live QA Dashboard",
+      "description": "Public results dashboard showing what AI-assisted QA can produce: demo flow coverage, pass status, agent pipeline, project roadmap, and reporting structure.",
       "image": "",
-      "tags": ["GitHub Pages", "QA Reporting", "Automation Metrics", "Portfolio", "CI/CD"],
-      "liveUrl": "",
-      "githubUrl": "https://github.com/armandocodedev/qa-dashboard"
+      "tags": ["9 Passing Tests", "3 Demo Flows", "Agent Pipeline", "Public Report"],
+      "outcomes": ["Live QA portfolio artifact", "Clear test results", "Stakeholder-friendly reporting", "AI workflow explanation"],
+      "liveUrl": "https://qa.armandocode.com",
+      "githubUrl": ""
     },
     {
       "title": "Enterprise Playwright Framework",
-      "description": "Designed and led a scalable E2E automation framework with TypeScript and Playwright, including cross-browser coverage, parallel execution, reusable fixtures, reliable reporting, and CI/CD execution across environments.",
+      "description": "Production-style automation architecture focused on reliable releases, reusable test layers, cross-browser confidence, and pipeline-ready feedback.",
       "image": "",
-      "tags": ["TypeScript", "Playwright", "Fixtures", "CI/CD", "Cross-browser Testing"],
+      "tags": ["Architecture", "Reliability", "CI/CD", "Scale"],
+      "outcomes": ["Reusable fixtures and flows", "Parallel execution", "Cross-browser coverage", "Pipeline quality gates"],
       "liveUrl": "",
       "githubUrl": ""
     },
     {
       "title": "API Automation & Monitoring",
-      "description": "Built and maintained API testing and monitoring solutions with Java, Cucumber, Rest Assured, Docker, and TypeScript endpoint checks for fintech payment workflows and production-critical services.",
+      "description": "API quality layer for critical flows, combining automated validation, endpoint monitoring, containerized execution, and notification-ready reporting.",
       "image": "",
-      "tags": ["Java", "Rest Assured", "Cucumber", "Docker", "API Monitoring"],
+      "tags": ["API Quality", "Monitoring", "Docker", "Reporting"],
+      "outcomes": ["Critical endpoint checks", "Payment-flow validation", "Containerized execution", "Incident-response signals"],
       "liveUrl": "",
       "githubUrl": ""
     }

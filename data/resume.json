@@ -1,0 +1,120 @@
+{
+  "basics": {
+    "name": "Freddy Suarez",
+    "label": "Senior QA Automation Engineer / SDET",
+    "email": "armandocodedev@gmail.com",
+    "location": "Montevideo, Uruguay",
+    "summary": "Senior SDET with 5+ years of experience building automation strategies for web, API, and cloud delivery teams. Specialized in Playwright, TypeScript, Java API testing, CI/CD quality gates, and AI-assisted QA workflows.",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/armandocodedev"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/freddy-armando-suarez"
+      }
+    ]
+  },
+  "headlineSkills": [
+    "Playwright",
+    "TypeScript",
+    "OpenAI API",
+    "Java",
+    "Rest Assured",
+    "GitHub Actions",
+    "Docker",
+    "Harness"
+  ],
+  "techStack": [
+    {
+      "category": "AI and Agentic QA",
+      "items": ["OpenAI API", "Prompt Engineering", "Agentic Testing", "AI Test Generation", "AI Repair Loops", "Test Summarization"]
+    },
+    {
+      "category": "Web Automation",
+      "items": ["Playwright", "TypeScript", "JavaScript", "Selenium WebDriver", "Page Objects", "Reusable Fixtures", "Cross-browser Testing"]
+    },
+    {
+      "category": "API and Performance",
+      "items": ["Java", "Rest Assured", "Cucumber", "Postman", "JMeter", "Endpoint Monitoring", "Contract-focused Testing"]
+    },
+    {
+      "category": "DevOps and Cloud",
+      "items": ["GitHub Actions", "Harness", "Azure DevOps", "Jenkins", "Docker", "GCP", "AWS", "CI/CD Pipelines"]
+    },
+    {
+      "category": "Engineering",
+      "items": ["C#", "Spring Boot", "React", "PostgreSQL", "MySQL", "SQL Server", "Git"]
+    }
+  ],
+  "work": [
+    {
+      "position": "Senior SDET",
+      "company": "Virtual Data Room Provider",
+      "location": "Montevideo, Uruguay",
+      "startDate": "2023-04",
+      "endDate": "Present",
+      "highlights": [
+        "Led TypeScript and Playwright adoption for enterprise E2E automation.",
+        "Architected reusable framework patterns for fixtures, flows, reporting, and cross-browser execution.",
+        "Integrated automated checks into Harness pipelines across environments.",
+        "Mentored SDETs through code reviews, TypeScript practices, and automation strategy."
+      ],
+      "technologies": ["TypeScript", "Playwright", "Harness", "CI/CD", "Cross-browser Testing"]
+    },
+    {
+      "position": "QA Automation Engineer",
+      "company": "Fintech Payment Solutions",
+      "location": "Montevideo, Uruguay",
+      "startDate": "2022-05",
+      "endDate": "2023-04",
+      "highlights": [
+        "Developed API automation with Java, Cucumber, and Rest Assured for payment workflows.",
+        "Implemented TypeScript monitoring for critical endpoints.",
+        "Containerized automated test execution with Docker.",
+        "Enhanced reporting and notifications through Google Chat integrations."
+      ],
+      "technologies": ["Java", "Rest Assured", "Cucumber", "Docker", "TypeScript"]
+    },
+    {
+      "position": "QA Automation Tester",
+      "company": "Banking Software Solutions",
+      "location": "Montevideo, Uruguay",
+      "startDate": "2021-03",
+      "endDate": "2022-11",
+      "highlights": [
+        "Created custom UI automation frameworks with C#, Java, and Selenium WebDriver.",
+        "Built reusable test components to improve maintainability and accelerate coverage.",
+        "Supported multi-environment validation for banking software delivery."
+      ],
+      "technologies": ["C#", "Java", "Selenium WebDriver", "Test Automation"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Agentic Testing CLI",
+      "summary": "AI-assisted Playwright test generation tool that explores pages, generates specs, executes them, repairs failures, and saves run history.",
+      "technologies": ["OpenAI API", "Playwright", "Node.js", "GitHub Actions"],
+      "url": "https://github.com/armandocodedev/agentic-testing"
+    },
+    {
+      "name": "QA Dashboard Portfolio",
+      "summary": "Static QA dashboard for presenting agentic testing flows, pipeline stages, metrics, and reporting roadmap.",
+      "technologies": ["GitHub Pages", "HTML", "CSS", "QA Reporting"],
+      "url": "https://qa.armandocode.com"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISTQB Certified Tester Advanced Level - Technical Test Analyst",
+      "issuer": "ISTQB",
+      "date": "2023-11"
+    },
+    {
+      "name": "ISTQB Certified Tester Foundation Level",
+      "issuer": "ISTQB",
+      "date": "2022-11"
+    }
+  ]
+}
