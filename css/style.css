@@ -1,16 +1,17 @@
 /* Base styles with CSS variables for theming */
 :root {
-    --primary-color: #0f766e;
+    --primary-color: #7c15a7;
     --secondary-color: #111827;
-    --accent-color: #f59e0b;
+    --accent-color: #b710c2;
+    --brand-soft-color: #d894ff;
     --text-color: #1f2937;
     --muted-color: #667085;
-    --page-bg: #f4f6f8;
+    --page-bg: #f7f5fb;
     --panel-bg: #ffffff;
-    --panel-soft-bg: #f8fafc;
-    --line-color: #d8dee8;
-    --light-bg-color: #f3f4f6;
-    --shadow-color: rgba(15, 23, 42, 0.08);
+    --panel-soft-bg: #fbf7ff;
+    --line-color: #e2d7eb;
+    --light-bg-color: #f2ecf7;
+    --shadow-color: rgba(74, 20, 100, 0.1);
     --header-bg: #ffffff;
     --header-text: #111827;
     --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -19,18 +20,19 @@
 }
 
 :root[data-theme="dark"] {
-    --primary-color: #2dd4bf;
+    --primary-color: #d894ff;
     --secondary-color: #f8fafc;
-    --accent-color: #fbbf24;
+    --accent-color: #b710c2;
+    --brand-soft-color: #d894ff;
     --text-color: #e5e7eb;
-    --muted-color: #aab4c3;
-    --page-bg: #0f172a;
-    --panel-bg: #111827;
-    --panel-soft-bg: #182230;
-    --line-color: #263244;
-    --light-bg-color: #111827;
-    --shadow-color: rgba(0, 0, 0, 0.28);
-    --header-bg: #111827;
+    --muted-color: #b9a9c8;
+    --page-bg: #130817;
+    --panel-bg: #1b1022;
+    --panel-soft-bg: #24142e;
+    --line-color: #382244;
+    --light-bg-color: #1b1022;
+    --shadow-color: rgba(0, 0, 0, 0.34);
+    --header-bg: #170b1d;
     --header-text: #f8fafc;
 }
 
@@ -66,6 +68,15 @@ header {
     border-bottom: 1px solid var(--line-color);
     color: var(--header-text);
     padding: 2rem 0;
+    width: 100%;
+}
+
+header::after {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--brand-soft-color));
+    content: "";
+    display: block;
+    height: 3px;
+    opacity: 0.95;
     width: 100%;
 }
 
@@ -232,7 +243,7 @@ section h3 {
 .focus-card {
     background: var(--panel-bg);
     border: 1px solid var(--line-color);
-    border-top: 4px solid var(--accent-color);
+    border-top: 4px solid var(--primary-color);
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 10px 25px var(--shadow-color);
@@ -374,7 +385,7 @@ section h3 {
 }
 
 .project-outcomes li::before {
-    background: var(--accent-color);
+    background: var(--brand-soft-color);
     border-radius: 999px;
     content: "";
     height: 0.45rem;

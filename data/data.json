@@ -186,11 +186,11 @@
   ],
   "siteSettings": {
     "theme": {
-      "primaryColor": "#0F766E",
+      "primaryColor": "#7C15A7",
       "secondaryColor": "#111827",
-      "accentColor": "#F59E0B",
+      "accentColor": "#B710C2",
       "textColor": "#1F2937",
-      "lightBackgroundColor": "#F3F4F6"
+      "lightBackgroundColor": "#F2ECF7"
     },
     "metaTags": {
       "title": "Freddy Suarez - Senior QA Automation & AI Testing Engineer",
