@@ -156,22 +156,37 @@ nav ul li a:hover {
 }
 
 .theme-toggle {
+    align-items: center;
     border: 1px solid var(--line-color);
     border-radius: 999px;
     background: var(--panel-soft-bg);
     color: var(--text-color);
     cursor: pointer;
+    display: inline-flex;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 800;
-    min-width: 64px;
-    padding: 0.4rem 0.75rem;
-    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+    gap: 0.45rem;
+    justify-content: center;
+    min-width: 92px;
+    padding: 0.48rem 0.9rem;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+.theme-toggle::before {
+    content: '◐';
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+:root[data-theme="dark"] .theme-toggle::before {
+    content: '◑';
 }
 
 .theme-toggle:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
+    transform: translateY(-1px);
 }
 
 .hero {

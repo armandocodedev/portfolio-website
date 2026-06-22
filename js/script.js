@@ -129,6 +129,7 @@ function applyColorMode(theme) {
         const isDark = normalizedTheme === 'dark';
         themeToggle.textContent = isDark ? 'Light' : 'Dark';
         themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
     }
 }
 
