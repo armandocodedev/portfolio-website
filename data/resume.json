@@ -4,21 +4,16 @@
     "label": "Senior QA Automation Engineer / SDET",
     "email": "armandocodedev@gmail.com",
     "location": "Montevideo, Uruguay",
-    "summary": "Senior SDET with 5+ years of experience building automation strategies for web, API, and cloud delivery teams. Specialized in Playwright, TypeScript, Java API testing, CI/CD quality gates, and AI-assisted QA workflows.",
-    "profiles": [
-      {
-        "network": "GitHub",
-        "url": "https://github.com/armandocodedev"
-      },
-      {
-        "network": "LinkedIn",
-        "url": "https://www.linkedin.com/in/freddy-armando-suarez"
-      }
-    ]
+    "summary": "Senior SDET with 5+ years of experience building automation strategies for web, API, data, and AI-enabled applications. Specialized in Playwright, TypeScript, Claude-assisted QA, UI-vs-database validation, data pipeline table testing, and agentic testing workflows.",
+    "profiles": []
   },
   "headlineSkills": [
     "Playwright",
     "TypeScript",
+    "Claude",
+    "AI App Testing",
+    "UI vs DB",
+    "Data QA",
     "OpenAI API",
     "Java",
     "Rest Assured",
@@ -29,23 +24,65 @@
   "techStack": [
     {
       "category": "AI and Agentic QA",
-      "items": ["OpenAI API", "Prompt Engineering", "Agentic Testing", "AI Test Generation", "AI Repair Loops", "Test Summarization"]
+      "items": [
+        "Claude",
+        "OpenAI API",
+        "AI Application Testing",
+        "Machine Learning Validation",
+        "Prompt Risk Coverage",
+        "Agentic Testing",
+        "AI Repair Loops"
+      ]
     },
     {
       "category": "Web Automation",
-      "items": ["Playwright", "TypeScript", "JavaScript", "Selenium WebDriver", "Page Objects", "Reusable Fixtures", "Cross-browser Testing"]
+      "items": [
+        "Playwright",
+        "TypeScript",
+        "JavaScript",
+        "UI vs DB Automation",
+        "Selenium WebDriver",
+        "Reusable Fixtures",
+        "Cross-browser Testing"
+      ]
     },
     {
-      "category": "API and Performance",
-      "items": ["Java", "Rest Assured", "Cucumber", "Postman", "JMeter", "Endpoint Monitoring", "Contract-focused Testing"]
+      "category": "Data, API and Performance",
+      "items": [
+        "Data Pipeline Table Testing",
+        "SQL Reconciliation",
+        "Java",
+        "Rest Assured",
+        "Cucumber",
+        "Postman",
+        "JMeter",
+        "Endpoint Monitoring"
+      ]
     },
     {
       "category": "DevOps and Cloud",
-      "items": ["GitHub Actions", "Harness", "Azure DevOps", "Jenkins", "Docker", "GCP", "AWS", "CI/CD Pipelines"]
+      "items": [
+        "GitHub Actions",
+        "Harness",
+        "Azure DevOps",
+        "Jenkins",
+        "Docker",
+        "GCP",
+        "AWS",
+        "CI/CD Pipelines"
+      ]
     },
     {
       "category": "Engineering",
-      "items": ["C#", "Spring Boot", "React", "PostgreSQL", "MySQL", "SQL Server", "Git"]
+      "items": [
+        "C#",
+        "Spring Boot",
+        "React",
+        "PostgreSQL",
+        "MySQL",
+        "SQL Server",
+        "Git"
+      ]
     }
   ],
   "work": [
@@ -61,7 +98,13 @@
         "Integrated automated checks into Harness pipelines across environments.",
         "Mentored SDETs through code reviews, TypeScript practices, and automation strategy."
       ],
-      "technologies": ["TypeScript", "Playwright", "Harness", "CI/CD", "Cross-browser Testing"]
+      "technologies": [
+        "TypeScript",
+        "Playwright",
+        "Harness",
+        "CI/CD",
+        "Cross-browser Testing"
+      ]
     },
     {
       "position": "QA Automation Engineer",
@@ -75,7 +118,13 @@
         "Containerized automated test execution with Docker.",
         "Enhanced reporting and notifications through Google Chat integrations."
       ],
-      "technologies": ["Java", "Rest Assured", "Cucumber", "Docker", "TypeScript"]
+      "technologies": [
+        "Java",
+        "Rest Assured",
+        "Cucumber",
+        "Docker",
+        "TypeScript"
+      ]
     },
     {
       "position": "QA Automation Tester",
@@ -88,20 +137,35 @@
         "Built reusable test components to improve maintainability and accelerate coverage.",
         "Supported multi-environment validation for banking software delivery."
       ],
-      "technologies": ["C#", "Java", "Selenium WebDriver", "Test Automation"]
+      "technologies": [
+        "C#",
+        "Java",
+        "Selenium WebDriver",
+        "Test Automation"
+      ]
     }
   ],
   "projects": [
     {
       "name": "Agentic Testing CLI",
       "summary": "AI-assisted Playwright test generation tool that explores pages, generates specs, executes them, repairs failures, and saves run history.",
-      "technologies": ["OpenAI API", "Playwright", "Node.js", "GitHub Actions"],
+      "technologies": [
+        "OpenAI API",
+        "Playwright",
+        "Node.js",
+        "GitHub Actions"
+      ],
       "url": "https://github.com/armandocodedev/agentic-testing"
     },
     {
       "name": "QA Dashboard Portfolio",
       "summary": "Static QA dashboard for presenting agentic testing flows, pipeline stages, metrics, and reporting roadmap.",
-      "technologies": ["GitHub Pages", "HTML", "CSS", "QA Reporting"],
+      "technologies": [
+        "GitHub Pages",
+        "HTML",
+        "CSS",
+        "QA Reporting"
+      ],
       "url": "https://qa.armandocode.com"
     }
   ],

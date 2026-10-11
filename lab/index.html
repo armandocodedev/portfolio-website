@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armando Code Lab | Help Shape What's Next</title>
+    <meta name="description" content="Help shape what comes next at Armando Code: AI courses, tutorials, apps, or videogames. Vote and optionally keep in touch.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/brand/armandocode-mark.svg" type="image/svg+xml">
+</head>
+<body class="community-page">
+    <header id="top">
+        <nav>
+            <a class="logo brand-logo" href="../" aria-label="Armando Code home">
+                <img class="brand-mark" src="../assets/brand/armandocode-mark.svg" alt="" aria-hidden="true">
+                <img class="brand-wordmark brand-wordmark-light" src="../assets/brand/armandocode-wordmark-light.svg" alt="" aria-hidden="true">
+                <img class="brand-wordmark brand-wordmark-dark" src="../assets/brand/armandocode-wordmark-dark.svg" alt="" aria-hidden="true">
+                <span class="sr-only brand-name">Armando Code</span>
+            </a>
+            <div class="nav-actions">
+                <ul>
+                    <li><a href="../">Home</a></li>
+                    <li><a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="nav_email">Email</a></li>
+                </ul>
+                <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="community" class="audience-survey community-intro" data-survey-section data-survey-url="https://us.posthog.com/external_surveys/01a128be-13a6-0000-17ac-1c9d3c1e719f">
+            <h1>Armando Code Lab</h1>
+            <h2>What would you like to see next?</h2>
+            <p>AI courses, practical tutorials, useful apps, or videogames. Tell me what interests you and help shape what I create next.</p>
+            <button class="cookie-button primary" type="button" data-open-survey>Share your interests</button>
+            <p class="survey-note">Vote without an email. Leave one only if you'd like occasional updates.</p>
+            <iframe class="audience-survey-frame" title="Armando Code audience survey" referrerpolicy="no-referrer" hidden></iframe>
+            <p class="survey-privacy"><a href="../privacy.html">Privacy &amp; email preferences</a></p>
+        </section>
+        <section class="community-project" aria-labelledby="echostory-title">
+            <div>
+                <span class="lab-kicker">Something to try</span>
+                <h2 id="echostory-title">EchoStory</h2>
+                <p>Play an interactive story. See where your choices take you.</p>
+                <a class="button-link secondary" href="https://choicegames.armandocode.com/en" target="_blank" rel="noopener noreferrer" data-analytics-event="select_project" data-app-slug="echostory" data-project-type="game" data-cta="lab_game">Play EchoStory</a>
+            </div>
+            <img src="../assets/projects/choice-games-home.png" alt="EchoStory interactive story game preview" loading="lazy">
+        </section>
+        <section class="other-experiments">
+            <details>
+                <summary>Other experiments</summary>
+                <ul>
+                    <li><a href="https://reserva-six-gamma.vercel.app/" target="_blank" rel="noopener noreferrer" data-analytics-event="select_project" data-app-slug="reserva" data-project-type="tool" data-cta="lab_other">Reserva</a><p>Shared-space reservations and building maintenance.</p></li>
+                    <li><a href="https://qa.armandocode.com" target="_blank" rel="noopener noreferrer" data-analytics-event="select_project" data-app-slug="qa-dashboard" data-project-type="qa" data-cta="lab_other">QA Dashboard</a><p>A testing and quality reporting demo.</p></li>
+                </ul>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Armando Code</p>
+        <a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="footer_email">Email</a>
+        <a href="../privacy.html">Privacy &amp; Cookies</a>
+    </footer>
+    <div class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+        <div><strong>Analytics cookies</strong><p>I use PostHog to understand visits and interests. You can vote without accepting analytics.</p></div>
+        <div class="cookie-actions">
+            <button class="cookie-button secondary" type="button" data-cookie-choice="rejected">Reject</button>
+            <button class="cookie-button primary" type="button" data-cookie-choice="accepted">Accept analytics</button>
+        </div>
+    </div>
+    <script src="../js/analytics.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

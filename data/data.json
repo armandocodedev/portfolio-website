@@ -2,37 +2,23 @@
   "personalInfo": {
     "brandName": "Armando Code",
     "name": "Freddy Suarez",
-    "title": "Senior QA Automation Engineer | AI-Assisted Testing | Playwright | API Automation",
-    "heroHeadline": "QA Automation for Modern Product Teams",
-    "bio": "Senior SDET with 5+ years of experience designing automation strategies for web, API, and cloud delivery teams. I build maintainable Playwright and TypeScript frameworks, Java/Rest Assured API suites, CI/CD quality gates, and AI-assisted testing workflows that help teams discover risk faster and release with confidence.",
+    "title": "Senior QA Automation Engineer | AI Application Testing | Playwright | Data Validation",
+    "heroHeadline": "QA Automation for AI, Data, and Product Teams",
+    "bio": "Senior SDET with 5+ years of experience designing automation strategies for web, API, data, and AI-enabled applications. I build Playwright frameworks, UI-vs-database validation, Data Pipeline table checks, and Claude-assisted test workflows that help teams find risk faster and release with confidence.",
     "location": "Montevideo, Uruguay",
     "contactEmail": "armandocodedev@gmail.com",
     "socialLinks": {
-      "email": "mailto:armandocodedev@gmail.com",
-      "github": "https://github.com/armandocodedev",
-      "linkedin": "https://www.linkedin.com/in/freddy-armando-suarez"
+      "email": "mailto:armandocodedev@gmail.com"
     }
   },
   "navigation": [
     {
-      "text": "About",
-      "url": "#about"
-    },
-    {
-      "text": "AI QA Lab",
+      "text": "QA Work",
       "url": "#ai-lab"
     },
     {
-      "text": "QA Dashboard",
-      "url": "https://qa.armandocode.com"
-    },
-    {
-      "text": "CV",
-      "url": "#cv"
-    },
-    {
-      "text": "Projects",
-      "url": "#projects"
+      "text": "Apps",
+      "url": "lab/"
     },
     {
       "text": "Contact",
@@ -41,83 +27,194 @@
   ],
   "focusAreas": [
     {
-      "title": "Agentic Test Generation",
-      "description": "Building AI browser agents that inspect live pages, explore user flows, generate Playwright specs, run them, and repair failures with controlled retry loops.",
-      "tags": ["OpenAI", "Playwright", "Node.js", "Prompt Engineering"]
+      "title": "AI Application Testing",
+      "description": "Testing machine-learning and AI-assisted application flows with Claude-informed test design, prompt-risk coverage, regression checks, and human-reviewable results.",
+      "tags": [
+        "Claude",
+        "AI Apps",
+        "ML Validation",
+        "Risk Coverage"
+      ]
     },
     {
-      "title": "Quality Intelligence Dashboards",
-      "description": "Creating portfolio-ready QA dashboards that summarize automation runs, agent decisions, generated tests, defects, reports, and roadmap progress for stakeholders.",
-      "tags": ["Static Dashboards", "GitHub Pages", "Test Reports", "CI Artifacts"]
+      "title": "Data Pipeline Quality Testing",
+      "description": "Validating data pipelines from source ingestion through transformed and business-ready outputs with schema checks, reconciliation rules, and automated quality signals.",
+      "tags": [
+        "Data QA",
+        "Pipeline Checks",
+        "Reconciliation",
+        "SQL"
+      ]
     },
     {
-      "title": "Modern Release Quality",
-      "description": "Connecting E2E, API, smoke, monitoring, and scheduled tests into CI/CD pipelines so quality signals are visible before release and after deployment.",
-      "tags": ["Harness", "GitHub Actions", "Docker", "Cloud Testing"]
+      "title": "UI vs Database Automation",
+      "description": "Comparing what users see in the UI against database records and service outputs, using Playwright plus agentic checks to catch mismatches quickly.",
+      "tags": [
+        "Playwright",
+        "DB Comparison",
+        "Agentic Testing",
+        "SQL"
+      ]
     }
   ],
   "projects": [
     {
-      "title": "Agentic Testing CLI",
-      "description": "AI-assisted QA workflow that turns a natural-language testing goal into explored flows, generated Playwright coverage, execution feedback, repair attempts, and run history.",
+      "title": "Agentic Playwright Testing",
+      "description": "AI-assisted QA workflow that turns a testing goal into explored flows, generated Playwright coverage, execution feedback, repair attempts, and run history.",
       "image": "",
-      "tags": ["Explore", "Generate", "Execute", "Repair", "Report"],
-      "outcomes": ["Browser-driving AI agent", "Playwright spec generation", "Failure repair loop", "Run history for review"],
+      "tags": [
+        "Playwright",
+        "Agentic Testing",
+        "Claude",
+        "Repair Loop"
+      ],
+      "outcomes": [
+        "Browser-driving AI agent",
+        "Generated Playwright specs",
+        "Failure repair loop",
+        "Run history for review"
+      ],
+      "liveUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "title": "UI vs DB Comparison Automation",
+      "description": "Automated checks that compare UI values against database or API-backed records, designed for workflows where the screen must match the source of truth.",
+      "image": "",
+      "tags": [
+        "UI Validation",
+        "Database QA",
+        "Playwright",
+        "SQL"
+      ],
+      "outcomes": [
+        "Screen-to-record comparison",
+        "Mismatch reporting",
+        "Business-rule validation",
+        "CI-ready checks"
+      ],
+      "liveUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "title": "Data Pipeline Table Testing",
+      "description": "Data quality automation for source, transformed, and curated tables, with checks for completeness, schema drift, reconciliation, and business-ready outputs.",
+      "image": "",
+      "tags": [
+        "Data Quality",
+        "ETL",
+        "SQL",
+        "Pipelines"
+      ],
+      "outcomes": [
+        "Layer-by-layer validation",
+        "Schema and volume checks",
+        "Transformation reconciliation",
+        "Quality evidence for release"
+      ],
       "liveUrl": "",
       "githubUrl": ""
     },
     {
       "title": "Live QA Dashboard",
-      "description": "Public results dashboard showing what AI-assisted QA can produce: demo flow coverage, pass status, agent pipeline, project roadmap, and reporting structure.",
+      "description": "Public dashboard showing AI-assisted QA reporting: demo flow coverage, pass status, agent pipeline, project roadmap, and stakeholder-friendly summaries.",
       "image": "",
-      "tags": ["9 Passing Tests", "3 Demo Flows", "Agent Pipeline", "Public Report"],
-      "outcomes": ["Live QA portfolio artifact", "Clear test results", "Stakeholder-friendly reporting", "AI workflow explanation"],
+      "tags": [
+        "QA Reporting",
+        "Agent Pipeline",
+        "Public Report",
+        "Automation"
+      ],
+      "outcomes": [
+        "Live QA portfolio artifact",
+        "Clear test results",
+        "Stakeholder-friendly reporting",
+        "AI workflow explanation"
+      ],
       "liveUrl": "https://qa.armandocode.com",
-      "githubUrl": ""
-    },
-    {
-      "title": "Enterprise Playwright Framework",
-      "description": "Production-style automation architecture focused on reliable releases, reusable test layers, cross-browser confidence, and pipeline-ready feedback.",
-      "image": "",
-      "tags": ["Architecture", "Reliability", "CI/CD", "Scale"],
-      "outcomes": ["Reusable fixtures and flows", "Parallel execution", "Cross-browser coverage", "Pipeline quality gates"],
-      "liveUrl": "",
-      "githubUrl": ""
-    },
-    {
-      "title": "API Automation & Monitoring",
-      "description": "API quality layer for critical flows, combining automated validation, endpoint monitoring, containerized execution, and notification-ready reporting.",
-      "image": "",
-      "tags": ["API Quality", "Monitoring", "Docker", "Reporting"],
-      "outcomes": ["Critical endpoint checks", "Payment-flow validation", "Containerized execution", "Incident-response signals"],
-      "liveUrl": "",
       "githubUrl": ""
     }
   ],
   "skills": [
     {
       "category": "AI-Assisted QA",
-      "items": ["Agentic Testing", "OpenAI API", "Prompt Engineering", "AI Test Generation", "AI Repair Loops", "Exploratory Test Agents", "Test Summarization"]
+      "items": [
+        "Claude",
+        "OpenAI API",
+        "AI Application Testing",
+        "Machine Learning Validation",
+        "Prompt Engineering",
+        "Agentic Testing",
+        "AI Test Generation",
+        "AI Repair Loops",
+        "Test Summarization"
+      ]
     },
     {
       "category": "Automation Architecture",
-      "items": ["Playwright", "TypeScript", "Selenium WebDriver", "Framework Design", "Reusable Fixtures", "Page Objects", "Cross-browser Testing", "Parallel Execution"]
+      "items": [
+        "Playwright",
+        "TypeScript",
+        "UI vs DB Checks",
+        "Selenium WebDriver",
+        "Framework Design",
+        "Reusable Fixtures",
+        "Page Objects",
+        "Cross-browser Testing",
+        "Parallel Execution"
+      ]
     },
     {
-      "category": "API & Performance Testing",
-      "items": ["Java", "Rest Assured", "Cucumber", "Postman", "JMeter", "Contract-focused Testing", "Endpoint Monitoring"]
+      "category": "Data, API & Performance Testing",
+      "items": [
+        "Data Pipeline Testing",
+        "SQL Validation",
+        "Java",
+        "Rest Assured",
+        "Cucumber",
+        "Postman",
+        "JMeter",
+        "Contract-focused Testing",
+        "Endpoint Monitoring"
+      ]
     },
     {
       "category": "DevOps & Cloud",
-      "items": ["GitHub Actions", "Harness", "Azure DevOps", "Jenkins", "Docker", "GCP", "AWS", "CI/CD Quality Gates"]
+      "items": [
+        "GitHub Actions",
+        "Harness",
+        "Azure DevOps",
+        "Jenkins",
+        "Docker",
+        "GCP",
+        "AWS",
+        "CI/CD Quality Gates"
+      ]
     },
     {
       "category": "Engineering & Data",
-      "items": ["JavaScript", "C#", "Spring Boot", "React", "PostgreSQL", "MySQL", "SQL Server", "Git"]
+      "items": [
+        "JavaScript",
+        "C#",
+        "Spring Boot",
+        "React",
+        "PostgreSQL",
+        "MySQL",
+        "SQL Server",
+        "Git"
+      ]
     },
     {
       "category": "Leadership",
-      "items": ["Test Strategy", "Technical Leadership", "Mentoring", "Code Reviews", "Agile Delivery", "Risk Analysis", "Stakeholder Communication"]
+      "items": [
+        "Test Strategy",
+        "Technical Leadership",
+        "Mentoring",
+        "Code Reviews",
+        "Agile Delivery",
+        "Risk Analysis",
+        "Stakeholder Communication"
+      ]
     }
   ],
   "education": [
@@ -198,8 +295,8 @@
     },
     "metaTags": {
       "title": "Freddy Suarez - Senior QA Automation & AI Testing Engineer",
-      "description": "Freddy Suarez portfolio: Senior SDET specializing in Playwright, TypeScript, API automation, CI/CD, and AI-assisted testing workflows.",
-      "keywords": "QA automation, SDET, Playwright, TypeScript, OpenAI, AI testing, agentic testing, API testing, CI/CD, Rest Assured"
+      "description": "Freddy Suarez portfolio: Senior SDET specializing in Playwright, AI application testing, Claude-assisted QA, UI-vs-database validation, and data pipeline quality automation.",
+      "keywords": "QA automation, SDET, Playwright, Claude, AI application testing, machine learning validation, agentic testing, UI database comparison, data pipeline testing"
     }
   }
 }

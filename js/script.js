@@ -74,17 +74,6 @@ function updateResumePanel(resume) {
         `)
         .join('');
 
-    const recentRole = resume.work && resume.work.length ? resume.work[0] : null;
-    const recentHighlights = recentRole ? `
-        <div class="resume-current-role">
-            <p class="resume-label">Current focus</p>
-            <h3>${recentRole.position} - ${recentRole.company}</h3>
-            <ul>
-                ${(recentRole.highlights || []).slice(0, 3).map(item => `<li>${item}</li>`).join('')}
-            </ul>
-        </div>
-    ` : '';
-
     resumePanel.innerHTML = `
         <div class="resume-summary">
             <p>${resume.basics.summary}</p>
@@ -92,9 +81,7 @@ function updateResumePanel(resume) {
                 <p class="resume-label">Core stack</p>
                 <ul>${headlineSkills}</ul>
             </div>
-            <a class="resume-json-link" href="data/resume.json" target="_blank" rel="noopener noreferrer">View JSON CV</a>
         </div>
-        ${recentHighlights}
         <div class="resume-stack-grid">
             ${techStack}
         </div>
@@ -215,6 +202,8 @@ function updatePersonalInfo(personalInfo) {
                     link.rel = 'noopener noreferrer';
                     link.classList.add('social-icon', platform);
                     link.setAttribute('aria-label', platform);
+                    link.dataset.analyticsEvent = 'contact_click';
+                    link.dataset.cta = 'contact_email';
                     link.innerHTML = `
                         ${getSocialIcon(platform)}
                         <span>${getSocialLabel(platform)}</span>
@@ -231,7 +220,6 @@ function getSocialIcon(platform) {
     const icons = {
         email: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 3.2V17h16V8.2l-7.38 5.16a1 1 0 0 1-1.14 0L4 8.2Zm1.7-1.2L12 11.4 18.3 7H5.7Z"/></svg>',
         github: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58v-2.15c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.45 11.45 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>',
-        linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.25 0h3.83v1.57h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.89h-4v-5.22c0-1.25-.02-2.85-1.74-2.85-1.74 0-2.01 1.36-2.01 2.76v5.31h-4V9.75Z"/></svg>',
         external: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3h7v7h-2V6.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>'
     };
 
@@ -241,8 +229,7 @@ function getSocialIcon(platform) {
 function getSocialLabel(platform) {
     const labels = {
         email: 'Email',
-        github: 'GitHub',
-        linkedin: 'LinkedIn'
+        github: 'GitHub'
     };
 
     return labels[platform] || platform;
@@ -284,6 +271,10 @@ function updateNavigation(navItems) {
             const a = document.createElement('a');
             a.href = item.url;
             a.textContent = item.text;
+            if (item.url === 'lab/') {
+                a.dataset.analyticsEvent = 'open_lab';
+                a.dataset.cta = 'nav_apps';
+            }
             li.appendChild(a);
             navList.appendChild(li);
         });
@@ -330,7 +321,7 @@ function updateProjects(projects) {
             // Add links if they exist
             projectHTML += '<div class="project-links">';
             if (project.liveUrl) {
-                projectHTML += `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">${getSocialIcon('external')}<span>Open Live Result</span></a>`;
+                projectHTML += `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" data-analytics-event="select_project" data-app-slug="${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}" data-project-type="qa" data-cta="portfolio_open">${getSocialIcon('external')}<span>Open Live Result</span></a>`;
             }
             if (project.githubUrl && project.showCodeLink) {
                 projectHTML += `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer">${getSocialIcon('github')}<span>View Code</span></a>`;
