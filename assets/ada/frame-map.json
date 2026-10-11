@@ -1,0 +1,494 @@
+{
+  "version": 1,
+  "name": "Ada",
+  "rendering": "transparent raster sprites; existing artwork, no redraw",
+  "cell": {
+    "width": 192,
+    "height": 208
+  },
+  "coordinateSystem": "zero-based row/column, top-left origin, x right and y down",
+  "neutral": {
+    "file": "assets/ada-neutral.png",
+    "fullAtlas": {
+      "row": 0,
+      "column": 0
+    },
+    "compactAtlas": {
+      "row": 0,
+      "column": 0
+    }
+  },
+  "atlases": {
+    "full": {
+      "file": "assets/ada-full-atlas.png",
+      "width": 1536,
+      "height": 2288,
+      "columns": 8,
+      "rows": 11
+    },
+    "compact": {
+      "file": "assets/ada-idle-gaze.png",
+      "width": 1536,
+      "height": 624,
+      "columns": 8,
+      "rows": 3
+    }
+  },
+  "directions": [
+    {
+      "index": 0,
+      "degreesClockwiseFromUp": 0.0,
+      "fullAtlas": {
+        "row": 9,
+        "column": 0,
+        "x": 0,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 0,
+        "x": 0,
+        "y": 208
+      }
+    },
+    {
+      "index": 1,
+      "degreesClockwiseFromUp": 22.5,
+      "fullAtlas": {
+        "row": 9,
+        "column": 1,
+        "x": 192,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 1,
+        "x": 192,
+        "y": 208
+      }
+    },
+    {
+      "index": 2,
+      "degreesClockwiseFromUp": 45.0,
+      "fullAtlas": {
+        "row": 9,
+        "column": 2,
+        "x": 384,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 2,
+        "x": 384,
+        "y": 208
+      }
+    },
+    {
+      "index": 3,
+      "degreesClockwiseFromUp": 67.5,
+      "fullAtlas": {
+        "row": 9,
+        "column": 3,
+        "x": 576,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 3,
+        "x": 576,
+        "y": 208
+      }
+    },
+    {
+      "index": 4,
+      "degreesClockwiseFromUp": 90.0,
+      "fullAtlas": {
+        "row": 9,
+        "column": 4,
+        "x": 768,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 4,
+        "x": 768,
+        "y": 208
+      }
+    },
+    {
+      "index": 5,
+      "degreesClockwiseFromUp": 112.5,
+      "fullAtlas": {
+        "row": 9,
+        "column": 5,
+        "x": 960,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 5,
+        "x": 960,
+        "y": 208
+      }
+    },
+    {
+      "index": 6,
+      "degreesClockwiseFromUp": 135.0,
+      "fullAtlas": {
+        "row": 9,
+        "column": 6,
+        "x": 1152,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 6,
+        "x": 1152,
+        "y": 208
+      }
+    },
+    {
+      "index": 7,
+      "degreesClockwiseFromUp": 157.5,
+      "fullAtlas": {
+        "row": 9,
+        "column": 7,
+        "x": 1344,
+        "y": 1872
+      },
+      "compactAtlas": {
+        "row": 1,
+        "column": 7,
+        "x": 1344,
+        "y": 208
+      }
+    },
+    {
+      "index": 8,
+      "degreesClockwiseFromUp": 180.0,
+      "fullAtlas": {
+        "row": 10,
+        "column": 0,
+        "x": 0,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 0,
+        "x": 0,
+        "y": 416
+      }
+    },
+    {
+      "index": 9,
+      "degreesClockwiseFromUp": 202.5,
+      "fullAtlas": {
+        "row": 10,
+        "column": 1,
+        "x": 192,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 1,
+        "x": 192,
+        "y": 416
+      }
+    },
+    {
+      "index": 10,
+      "degreesClockwiseFromUp": 225.0,
+      "fullAtlas": {
+        "row": 10,
+        "column": 2,
+        "x": 384,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 2,
+        "x": 384,
+        "y": 416
+      }
+    },
+    {
+      "index": 11,
+      "degreesClockwiseFromUp": 247.5,
+      "fullAtlas": {
+        "row": 10,
+        "column": 3,
+        "x": 576,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 3,
+        "x": 576,
+        "y": 416
+      }
+    },
+    {
+      "index": 12,
+      "degreesClockwiseFromUp": 270.0,
+      "fullAtlas": {
+        "row": 10,
+        "column": 4,
+        "x": 768,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 4,
+        "x": 768,
+        "y": 416
+      }
+    },
+    {
+      "index": 13,
+      "degreesClockwiseFromUp": 292.5,
+      "fullAtlas": {
+        "row": 10,
+        "column": 5,
+        "x": 960,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 5,
+        "x": 960,
+        "y": 416
+      }
+    },
+    {
+      "index": 14,
+      "degreesClockwiseFromUp": 315.0,
+      "fullAtlas": {
+        "row": 10,
+        "column": 6,
+        "x": 1152,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 6,
+        "x": 1152,
+        "y": 416
+      }
+    },
+    {
+      "index": 15,
+      "degreesClockwiseFromUp": 337.5,
+      "fullAtlas": {
+        "row": 10,
+        "column": 7,
+        "x": 1344,
+        "y": 2080
+      },
+      "compactAtlas": {
+        "row": 2,
+        "column": 7,
+        "x": 1344,
+        "y": 416
+      }
+    }
+  ],
+  "animations": [
+    {
+      "name": "idle",
+      "fullAtlasRow": 0,
+      "frameCount": 6,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggestedFrameDurationsMs": [
+        280,
+        110,
+        110,
+        140,
+        140,
+        320
+      ],
+      "compactAtlasRow": 0
+    },
+    {
+      "name": "running-right",
+      "fullAtlasRow": 1,
+      "frameCount": 8,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "suggestedFrameDurationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ]
+    },
+    {
+      "name": "running-left",
+      "fullAtlasRow": 2,
+      "frameCount": 8,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "suggestedFrameDurationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ]
+    },
+    {
+      "name": "waving",
+      "fullAtlasRow": 3,
+      "frameCount": 4,
+      "columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "suggestedFrameDurationsMs": [
+        140,
+        140,
+        140,
+        280
+      ]
+    },
+    {
+      "name": "jumping",
+      "fullAtlasRow": 4,
+      "frameCount": 5,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "suggestedFrameDurationsMs": [
+        140,
+        140,
+        140,
+        140,
+        280
+      ]
+    },
+    {
+      "name": "failed",
+      "fullAtlasRow": 5,
+      "frameCount": 8,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "suggestedFrameDurationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        240
+      ]
+    },
+    {
+      "name": "waiting",
+      "fullAtlasRow": 6,
+      "frameCount": 6,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggestedFrameDurationsMs": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        260
+      ]
+    },
+    {
+      "name": "running",
+      "fullAtlasRow": 7,
+      "frameCount": 6,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggestedFrameDurationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ]
+    },
+    {
+      "name": "review",
+      "fullAtlasRow": 8,
+      "frameCount": 6,
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggestedFrameDurationsMs": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        280
+      ]
+    }
+  ],
+  "timingNote": "Suggested timings copied from existing preview script; website may tune them. Gaze frames are selected by pointer direction, not played continuously."
+}

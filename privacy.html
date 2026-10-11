@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy & Cookies | Freddy Suarez</title>
-    <meta name="description" content="Privacy and cookie policy for Freddy Suarez's QA automation portfolio.">
+    <title>Privacy & Cookies | Armando Code</title>
+    <meta name="description" content="How Armando Code handles analytics consent, audience survey responses, and optional email updates.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,19 +13,23 @@
 <body>
     <header>
         <nav>
-            <a class="logo" href="index.html">Freddy Suarez</a>
+            <a class="logo brand-logo" href="./" aria-label="Armando Code home">
+                <img class="brand-mark" src="assets/brand/armandocode-mark.svg" alt="" aria-hidden="true">
+                <img class="brand-wordmark brand-wordmark-light" src="assets/brand/armandocode-wordmark-light.svg" alt="" aria-hidden="true">
+                <img class="brand-wordmark brand-wordmark-dark" src="assets/brand/armandocode-wordmark-dark.svg" alt="" aria-hidden="true">
+                <span class="sr-only brand-name">Armando Code</span>
+            </a>
             <div class="nav-actions">
                 <ul>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_nav_email">Email</a></li>
                 </ul>
                 <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark</button>
             </div>
         </nav>
         <div class="hero policy-hero">
             <h1>Privacy & Cookies</h1>
-            <p>How this portfolio uses analytics and stores consent choices.</p>
+            <p>How Armando Code handles analytics, survey responses, and email preferences.</p>
         </div>
     </header>
 
@@ -40,7 +44,7 @@
             <h2>Survey &amp; Email Updates</h2>
             <p>The audience survey is hosted by PostHog in its US region and loads when you choose to take it. You can vote without accepting website analytics or providing an email address.</p>
             <p>PostHog stores the answers you submit. If you explicitly choose email updates, it also stores the email address you provide with that response. This permission is separate from analytics consent.</p>
-            <p>Your email will be used for occasional Armando Code releases and content updates. To withdraw permission or request deletion of your survey response, email <a href="mailto:armandocodedev@gmail.com">armandocodedev@gmail.com</a>. Withdrawing email permission does not require changing your analytics choice.</p>
+            <p>Your email will be used for occasional Armando Code releases and content updates. To withdraw permission or request deletion of your survey response, email <a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_email_preferences">armandocodedev@gmail.com</a>. Withdrawing email permission does not require changing your analytics choice.</p>
         </section>
 
         <section>
@@ -51,13 +55,13 @@
 
         <section>
             <h2>Contact</h2>
-            <p>Questions about this policy can be sent to <a href="mailto:armandocodedev@gmail.com">armandocodedev@gmail.com</a>.</p>
+            <p>Questions about this policy can be sent to <a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_contact_email">armandocodedev@gmail.com</a>.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Freddy Suarez. All rights reserved.</p>
-        <a href="index.html">Back to portfolio</a>
+        <p>&copy; 2026 Armando Code</p>
+        <a href="./">Back to home</a>
     </footer>
 
     <div class="cookie-banner" role="region" aria-label="Cookie consent" hidden>

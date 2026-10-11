@@ -1,0 +1,12 @@
+Ada website asset export
+
+Source: approved Armandocode sprite atlas, now packaged for Ada website use.
+Source Library item: libfile_9b52b6054f3c8191b1c5be1bf5eb5900
+Original filename: spritesheet-extended.png
+SHA-256: b89008ef0351b90fbc3229e53863ea4346950d8a1e8e8a6567d9017666b9cf4a
+
+ada-full-atlas.png is byte-for-byte the source.
+ada-idle-gaze.png and ada-neutral.png are lossless crops/repacking of source pixels.
+No new artwork, recoloring, mirroring, geometry changes, portrait, 3D files or audio included.
+Frame ordering: original sprite request and assembly metadata, checked against atlas.
+Playback timing: original preview script; suggested website defaults rather than a runtime requirement.
