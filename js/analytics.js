@@ -14,7 +14,8 @@ function getCampaignContext() {
         page_path: window.location.pathname,
         page_location: window.location.origin + window.location.pathname,
         referrer: document.referrer ? new URL(document.referrer).origin : 'direct',
-        site_area: window.location.pathname.startsWith('/lab') ? 'lab' : 'website'
+        site_area: window.location.pathname.startsWith('/lab') ? 'lab' : 'website',
+        site_language: window.ArmandoI18n?.getLanguage() || 'en'
     };
 
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(key => {
@@ -131,6 +132,13 @@ function initAnalyticsConsent() {
 
     initTrackedLinks();
     initAudienceSurvey();
+    document.addEventListener('armandocode:languagechange', () => {
+        sendAnalyticsEvent('language_changed');
+        document.querySelectorAll('[data-survey-section]').forEach(container => {
+            const frame = container.querySelector('iframe');
+            if (!frame.hidden) frame.src = getAudienceSurveyUrl(container);
+        });
+    });
 }
 
 function sendAnalyticsEvent(eventName, eventParams = {}) {
@@ -159,17 +167,22 @@ function initTrackedLinks() {
     });
 }
 
+function getAudienceSurveyUrl(container) {
+    const surveyUrl = new URL(container.dataset.surveyUrl);
+    const campaign = readCampaignContext();
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(key => {
+        if (campaign[key]) surveyUrl.searchParams.set(key, campaign[key]);
+    });
+    surveyUrl.searchParams.set('display_language', campaign.site_language.toLowerCase());
+    return surveyUrl.href;
+}
+
 function initAudienceSurvey() {
     document.querySelectorAll('[data-open-survey]').forEach(button => {
         button.addEventListener('click', () => {
             const container = button.closest('[data-survey-section]');
             const frame = container.querySelector('iframe');
-            const surveyUrl = new URL(container.dataset.surveyUrl);
-            const campaign = readCampaignContext();
-            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(key => {
-                if (campaign[key]) surveyUrl.searchParams.set(key, campaign[key]);
-            });
-            frame.src = surveyUrl.href;
+            frame.src = getAudienceSurveyUrl(container);
             frame.hidden = false;
             button.hidden = true;
             sendAnalyticsEvent('survey_opened', { survey_id: '01a128be-13a6-0000-17ac-1c9d3c1e719f' });

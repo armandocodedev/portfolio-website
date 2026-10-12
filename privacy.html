@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy & Cookies | Armando Code</title>
-    <meta name="description" content="How Armando Code handles analytics consent, audience survey responses, and optional email updates.">
+    <title data-i18n="privacyTitle">Privacy & Cookies | Armando Code</title>
+    <meta name="description" data-i18n-content="privacyDescription" content="How Armando Code handles analytics consent, audience survey responses, and optional email updates.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav>
-            <a class="logo brand-logo" href="./" aria-label="Armando Code home">
+            <a class="logo brand-logo" href="./" aria-label="Armando Code home" data-i18n-aria-label="brandHome">
                 <img class="brand-mark" src="assets/brand/armandocode-mark.svg" alt="" aria-hidden="true">
                 <img class="brand-wordmark brand-wordmark-light" src="assets/brand/armandocode-wordmark-light.svg" alt="" aria-hidden="true">
                 <img class="brand-wordmark brand-wordmark-dark" src="assets/brand/armandocode-wordmark-dark.svg" alt="" aria-hidden="true">
@@ -21,60 +21,70 @@
             </a>
             <div class="nav-actions">
                 <ul>
-                    <li><a href="./">Home</a></li>
-                    <li><a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_nav_email">Email</a></li>
+                    <li><a href="./" data-i18n="home">Home</a></li>
+                    <li><a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_nav_email" data-i18n="email">Email</a></li>
                 </ul>
+                <label class="language-control">
+                    <span class="sr-only" data-i18n="language">Language</span>
+                    <select data-language-select>
+                        <option value="en" lang="en">English</option>
+                        <option value="es" lang="es">Español</option>
+                        <option value="pt-BR" lang="pt-BR">Português (BR)</option>
+                    </select>
+                </label>
                 <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark</button>
             </div>
         </nav>
         <div class="hero policy-hero">
-            <h1>Privacy & Cookies</h1>
-            <p>How Armando Code handles analytics, survey responses, and email preferences.</p>
+            <h1 data-i18n="privacy">Privacy & Cookies</h1>
+            <p data-i18n="privacyIntro">How Armando Code handles analytics, survey responses, and email preferences.</p>
         </div>
     </header>
 
     <main class="policy-page">
         <section>
-            <h2>Analytics</h2>
-            <p>This site uses PostHog only after you accept analytics tracking. It measures page visits, campaign sources, project selections, and contact clicks. An anonymous browser identifier is stored in local storage to recognize returning visits.</p>
-            <p>Website analytics does not capture form contents or record sessions. Survey answers and any email address you choose to provide are handled separately as described below. I do not sell your data.</p>
+            <h2 data-i18n="analytics">Analytics</h2>
+            <p data-i18n="analyticsPolicy">This site uses PostHog only after you accept analytics tracking. It measures page visits, campaign sources, project selections, and contact clicks. An anonymous browser identifier is stored in local storage to recognize returning visits.</p>
+            <p data-i18n="analyticsLimits">Website analytics does not capture form contents or record sessions. Survey answers and any email address you choose to provide are handled separately as described below. I do not sell your data.</p>
+            <p data-i18n="languagePolicy">Your language choice is saved in this browser independently of analytics consent. Consented analytics events include the selected language.</p>
         </section>
 
         <section>
-            <h2>Survey &amp; Email Updates</h2>
-            <p>The audience survey is hosted by PostHog in its US region and loads when you choose to take it. You can vote without accepting website analytics or providing an email address.</p>
-            <p>PostHog stores the answers you submit. If you explicitly choose email updates, it also stores the email address you provide with that response. This permission is separate from analytics consent.</p>
-            <p>Your email will be used for occasional Armando Code releases and content updates. To withdraw permission or request deletion of your survey response, email <a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_email_preferences">armandocodedev@gmail.com</a>. Withdrawing email permission does not require changing your analytics choice.</p>
+            <h2 data-i18n="surveyEmail">Survey &amp; Email Updates</h2>
+            <p data-i18n="surveyPolicy">The audience survey is hosted by PostHog in its US region and loads when you choose to take it. You can vote without accepting website analytics or providing an email address.</p>
+            <p data-i18n="surveyStorage">PostHog stores the answers you submit. If you explicitly choose email updates, it also stores the email address you provide with that response. This permission is separate from analytics consent.</p>
+            <p><span data-i18n="emailPolicy">Your email will be used for occasional Armando Code releases and content updates. To withdraw permission or request deletion of your survey response, email </span><a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_email_preferences">armandocodedev@gmail.com</a><span data-i18n="emailWithdrawal">. Withdrawing email permission does not require changing your analytics choice.</span></p>
         </section>
 
         <section>
-            <h2>Your Choice</h2>
-            <p>You can reject analytics when the cookie banner appears. If you accepted before and want to choose again, use the button below.</p>
-            <button class="cookie-button secondary" type="button" data-reset-cookie-choice>Reset analytics choice</button>
+            <h2 data-i18n="yourChoice">Your Choice</h2>
+            <p data-i18n="choicePolicy">You can reject analytics when the cookie banner appears. If you accepted before and want to choose again, use the button below.</p>
+            <button class="cookie-button secondary" type="button" data-reset-cookie-choice data-i18n="resetAnalytics">Reset analytics choice</button>
         </section>
 
         <section>
-            <h2>Contact</h2>
-            <p>Questions about this policy can be sent to <a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_contact_email">armandocodedev@gmail.com</a>.</p>
+            <h2 data-i18n="contact">Contact</h2>
+            <p><span data-i18n="contactPolicy">Questions about this policy can be sent to </span><a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="privacy_contact_email">armandocodedev@gmail.com</a>.</p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Armando Code</p>
-        <a href="./">Back to home</a>
+        <a href="./" data-i18n="backHome">Back to home</a>
     </footer>
 
-    <div class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+    <div class="cookie-banner" role="region" aria-label="Cookie consent" data-i18n-aria-label="cookieConsent" hidden>
         <div>
-            <strong>Analytics cookies</strong>
-            <p>I use PostHog to understand visits and project clicks. You can accept or reject analytics tracking.</p>
+            <strong data-i18n="analyticsCookies">Analytics cookies</strong>
+            <p data-i18n="cookieBody">I use PostHog to understand visits and interests. You can vote without accepting analytics.</p>
         </div>
         <div class="cookie-actions">
-            <button class="cookie-button secondary" type="button" data-cookie-choice="rejected">Reject</button>
-            <button class="cookie-button primary" type="button" data-cookie-choice="accepted">Accept analytics</button>
+            <button class="cookie-button secondary" type="button" data-cookie-choice="rejected" data-i18n="reject">Reject</button>
+            <button class="cookie-button primary" type="button" data-cookie-choice="accepted" data-i18n="acceptAnalytics">Accept analytics</button>
         </div>
     </div>
 
+    <script src="js/i18n.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/script.js"></script>
 </body>

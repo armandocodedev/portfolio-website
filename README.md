@@ -82,6 +82,14 @@ Run the consent, attribution, and page-priority checks with `node --test tests/*
 
 Instagram bio link: `https://armandocode.com/?utm_source=instagram&utm_medium=social&utm_campaign=bio`. Use a distinct `utm_campaign` or `utm_content` for individual posts.
 
+## Languages
+
+The homepage and privacy page support English (`en`), Latin American Spanish (`es`), and Brazilian Portuguese (`pt-BR`). The accessible native language selector remembers an explicit choice in `armandocode-language` local storage, independently of analytics consent. On a first visit, the first supported browser language is used; English is the fallback. If browser storage is blocked, switching still works for the current page.
+
+`js/i18n.js` contains the UI translations, including metadata, image descriptions, consent copy, and theme labels. Both content pages load it before analytics. Consented events include `site_language`; manual changes generate `language_changed` without an extra pageview.
+
+The existing PostHog survey has native `es` and `pt-br` translations for all three questions, choices, email guidance, and confirmation messages. The embed uses `display_language` to match the website. Changing language with an open survey asks before restarting it and discarding unsent answers. PostHog currently retains English platform-owned hints and navigation labels such as "Select all that apply" and "Submit survey"; these are not website translations. Question IDs and email opt-in branching remain unchanged.
+
 ## Ada Mascot
 
 The homepage includes a decorative, in-flow Ada beside the survey heading. `js/ada.js` selects the sixteen compact-atlas rectangles directly from `assets/ada/frame-map.json`, using clockwise-from-up pointer angles, a 24 CSS-pixel dead zone, and 3-degree sector hysteresis. Pointer updates are coalesced with requestAnimationFrame; only changed poses redraw. No idle blink, cursor chasing, 3D renderer, or new dependency is included.

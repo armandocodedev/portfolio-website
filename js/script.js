@@ -1,6 +1,9 @@
 // Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
+    document.addEventListener('armandocode:languagechange', () => {
+        applyColorMode(document.documentElement.dataset.theme);
+    });
 
     // Load JSON data
     if (document.querySelector('[data-portfolio-page]') || document.querySelector('.project-grid')) {
@@ -114,9 +117,10 @@ function applyColorMode(theme) {
 
     if (themeToggle) {
         const isDark = normalizedTheme === 'dark';
-        themeToggle.textContent = isDark ? 'Light' : 'Dark';
+        const translate = (key, fallback) => window.ArmandoI18n?.t(key) || fallback;
+        themeToggle.textContent = isDark ? translate('light', 'Light') : translate('dark', 'Dark');
         themeToggle.setAttribute('aria-pressed', String(isDark));
-        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+        themeToggle.setAttribute('aria-label', isDark ? translate('switchLight', 'Switch to light theme') : translate('switchDark', 'Switch to dark theme'));
     }
 }
 

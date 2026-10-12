@@ -6,7 +6,7 @@ const path = require('node:path');
 
 const source = fs.readFileSync(path.join(__dirname, '../js/analytics.js'), 'utf8');
 
-function setup({ consent, savedCampaign } = {}) {
+function setup({ consent, savedCampaign, language = 'en' } = {}) {
     const local = new Map([['analytics-consent', 'accepted'], ...(consent ? [['armandocode-posthog-consent', consent]] : [])]);
     const session = new Map(savedCampaign ? [['armandocode-campaign-context', JSON.stringify(savedCampaign)]] : []);
     const storage = map => ({ getItem: key => map.get(key) ?? null, setItem: (key, value) => map.set(key, value), removeItem: key => map.delete(key) });
@@ -20,14 +20,14 @@ function setup({ consent, savedCampaign } = {}) {
     const frame = { hidden: true };
     const section = { dataset: { surveyUrl: 'https://us.posthog.com/external_surveys/test' }, querySelector: () => frame };
     const surveyButton = { closest: () => section, addEventListener(name, callback) { this.click = callback; }, hidden: false };
-    const window = { location: { origin: 'https://armandocode.com', hostname: 'armandocode.com', pathname: '/lab/', search: '', reload() { this.reloaded = true; } } };
+    const window = { ArmandoI18n: { getLanguage: () => language }, location: { origin: 'https://armandocode.com', hostname: 'armandocode.com', pathname: '/lab/', search: '', reload() { this.reloaded = true; } } };
     const document = {
         referrer: 'https://www.instagram.com/some-path?private=discard',
         createElement: () => ({}),
         getElementsByTagName: () => [{ parentNode: { insertBefore: script => scripts.push(script) } }],
         querySelector: () => banner,
         querySelectorAll(selector) {
-            return selector === '[data-cookie-choice]' ? buttons : selector === '[data-reset-cookie-choice]' ? [reset] : selector === '[data-open-survey]' ? [surveyButton] : [];
+            return selector === '[data-cookie-choice]' ? buttons : selector === '[data-reset-cookie-choice]' ? [reset] : selector === '[data-open-survey]' ? [surveyButton] : selector === '[data-survey-section]' ? [section] : [];
         },
         addEventListener(name, callback) { listeners[name] = callback; }
     };
@@ -57,7 +57,7 @@ test('no analytics SDK before consent; survey remains independently available', 
     page.buttons[1].click();
     page.surveyButton.click();
     assert.equal(page.scripts.length, 0);
-    assert.equal(page.frame.src, 'https://us.posthog.com/external_surveys/test');
+    assert.equal(page.frame.src, 'https://us.posthog.com/external_surveys/test?display_language=en');
     assert.equal(page.frame.hidden, false);
     assert.equal(page.surveyButton.hidden, true);
 });
@@ -74,6 +74,7 @@ test('accepted tracking uses the current page and retained Instagram attribution
     assert.equal(page.captured[0].properties.page_path, '/lab/');
     assert.equal(page.captured[0].properties.utm_source, 'instagram');
     assert.equal(page.captured[0].properties.referrer, 'https://www.instagram.com');
+    assert.equal(page.captured[0].properties.site_language, 'en');
     const element = { dataset: { analyticsEvent: 'contact_click', cta: 'contact_email' }, protocol: 'mailto:', textContent: 'Email', getAttribute: () => 'mailto:example@example.com' };
     page.listeners.click({ target: { closest: () => element } });
     assert.equal(page.captured[1].name, 'contact_click');
@@ -104,4 +105,28 @@ test('survey links retain campaign tags without sending a visitor identifier', (
     assert.equal(url.searchParams.get('utm_source'), 'instagram');
     assert.equal(url.searchParams.get('utm_campaign'), 'bio');
     assert.equal(url.searchParams.has('distinct_id'), false);
+});
+
+for (const language of ['en', 'es', 'pt-BR']) {
+    test('survey and consented metrics use the selected language: ' + language, () => {
+        const page = setup({ language, consent: 'accepted' });
+        page.finishLoading();
+        page.surveyButton.click();
+        assert.equal(new URL(page.frame.src).searchParams.get('display_language'), language.toLowerCase());
+        assert.equal(page.captured[0].properties.site_language, language);
+        assert.equal(page.captured[1].properties.site_language, language);
+    });
+}
+
+test('changing language reloads only an open survey and never bypasses analytics consent', () => {
+    const page = setup();
+    page.window.ArmandoI18n.getLanguage = () => 'es';
+    page.listeners['armandocode:languagechange']();
+    assert.equal(page.frame.src, undefined);
+    page.surveyButton.click();
+    page.window.ArmandoI18n.getLanguage = () => 'pt-BR';
+    page.listeners['armandocode:languagechange']();
+    assert.equal(new URL(page.frame.src).searchParams.get('display_language'), 'pt-br');
+    assert.equal(page.scripts.length, 0);
+    assert.equal(page.captured.length, 0);
 });

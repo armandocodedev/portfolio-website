@@ -169,6 +169,41 @@ nav ul li a:hover {
     gap: 1rem;
 }
 
+.language-control select {
+    background: var(--panel-bg);
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 0.5rem;
+}
+.language-control select:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+.language-dialog {
+    background: var(--panel-bg);
+    color: var(--text-color);
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    width: min(480px, calc(100% - 2rem));
+    max-height: calc(100% - 2rem);
+    margin: auto;
+    padding: 1.5rem;
+}
+.language-dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+.language-dialog h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.language-dialog p { margin-bottom: 1.25rem; }
+.language-dialog button { min-height: 44px; }
+.nav-actions { flex-wrap: wrap; }
+@media (max-width: 768px) {
+    .community-page .nav-actions { gap: 0.75rem; justify-content: flex-start; }
+    .community-page .nav-actions ul { flex-basis: 100%; }
+}
+
 .theme-toggle {
     align-items: center;
     border: 1px solid var(--line-color);
@@ -1212,12 +1247,13 @@ footer {
     }
 
     .nav-actions {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: center;
+        flex-direction: row;
         width: 100%;
     }
     
     nav ul {
+        flex-basis: 100%;
         margin-top: 1rem;
         justify-content: flex-start;
         gap: 0.35rem;
