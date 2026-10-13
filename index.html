@@ -23,6 +23,7 @@
             <div class="nav-actions">
                 <ul>
                     <li><a href="#community" data-i18n="haveYourSay">Have your say</a></li>
+                    <li><a href="#courses" data-i18n="coursesNav">Courses</a></li>
                     <li><a href="mailto:armandocodedev@gmail.com" data-analytics-event="contact_click" data-cta="nav_email" data-i18n="email">Email</a></li>
                 </ul>
                 <label class="language-control">
@@ -50,6 +51,43 @@
             <p class="survey-note" data-i18n="surveyNote">Vote without an email. Leave one only if you'd like occasional updates.</p>
             <iframe class="audience-survey-frame" title="Armando Code audience survey" data-i18n-title="surveyTitle" referrerpolicy="no-referrer" hidden></iframe>
             <p class="survey-privacy"><a href="privacy.html" data-i18n="privacyPreferences">Privacy &amp; email preferences</a></p>
+        </section>
+        <section id="courses" class="community-courses" aria-labelledby="courses-title">
+            <div class="courses-heading">
+                <div>
+                    <span class="lab-kicker" data-i18n="coursesKicker">Learn with Armando Code</span>
+                    <h2 id="courses-title" data-i18n="coursesHeading">Courses &amp; resources</h2>
+                    <p data-i18n="coursesBody">Practical ways to turn AI into something you can create.</p>
+                </div>
+                <a class="courses-store-link" href="https://armandocode.melonplace.com/?lang=en&amp;utm_source=armandocode.com&amp;utm_medium=website&amp;utm_campaign=courses&amp;utm_content=browse_store" data-store-link data-analytics-event="store_visit" data-cta="browse_store" data-i18n="browseStore">Browse the store</a>
+            </div>
+            <div class="courses-grid">
+                <article class="course-card" aria-labelledby="avatar-course-title">
+                    <img src="assets/courses/ai-avatar-cover.jpg" alt="AI avatar course cover with an avatar preview and editing panels" data-i18n-alt="avatarCourseAlt" width="557" height="314" loading="lazy">
+                    <div class="course-card-content">
+                        <p class="course-status" data-i18n="courseOnStore">In the store</p>
+                        <h3 id="avatar-course-title" data-i18n="avatarCourseTitle">Create a realistic AI avatar</h3>
+                        <p data-i18n="avatarCourseBody">Explore the AI avatar course and its details in the Armando Code store.</p>
+                        <div class="course-card-footer">
+                            <span class="course-price">USD 10</span>
+                            <a class="button-link secondary" href="https://armandocode.melonplace.com/accion/course-ai-generate-avatar?lang=en&amp;utm_source=armandocode.com&amp;utm_medium=website&amp;utm_campaign=courses&amp;utm_content=avatar_course" data-store-link data-analytics-event="store_visit" data-app-slug="course-ai-generate-avatar" data-project-type="course" data-cta="avatar_course" data-i18n="viewCourse">View course</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="course-card" aria-labelledby="instagram-course-title">
+                    <img src="assets/courses/instagram-ia-cover.jpg" alt="Instagram AI course cover with content previews and a weekly planner" data-i18n-alt="instagramCourseAlt" width="1672" height="941" loading="lazy">
+                    <div class="course-card-content">
+                        <p class="course-status upcoming" data-i18n="courseComingSoon">Coming soon</p>
+                        <h3 id="instagram-course-title" data-i18n="instagramCourseTitle">Create Instagram content with AI</h3>
+                        <p data-i18n="instagramCourseBody">Five written lessons, prompts, and templates to plan seven posts for your brand.</p>
+                        <p class="course-format" data-i18n="instagramCourseFormat">Spanish · Self-paced · Written course</p>
+                        <div class="course-card-footer">
+                            <span class="course-price">USD 9</span>
+                            <span class="course-availability" data-i18n="courseNotOnSale">Not yet on sale</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
         <section class="community-project" aria-labelledby="echostory-title">
             <div>
@@ -82,6 +120,7 @@
         </div>
     </dialog>
     <script src="js/i18n.js"></script>
+    <script src="js/storefront.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/script.js"></script>
     <script src="js/ada.js"></script>

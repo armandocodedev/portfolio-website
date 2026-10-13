@@ -1,17 +1,18 @@
 # Armando Code
 
-A static audience-research website built with HTML, CSS, and JavaScript and hosted on GitHub Pages. The homepage prioritizes an interest survey and optional email updates. EchoStory is the secondary experience.
+A static audience-research website built with HTML, CSS, and JavaScript and hosted on GitHub Pages. The homepage prioritizes an interest survey and optional email updates, followed by courses and resources linked to MelonPlace, and EchoStory.
 
 ## Features
 
 - Responsive design that works on all devices
 - Clean, modern aesthetic
 - Audience-interest survey with optional email updates
+- Localized course previews and campaign-tagged MelonPlace store links
 - EchoStory as a secondary experience
 
 ## Routes
 
-- `/`: audience-interest survey, optional email updates, and EchoStory.
+- `/`: audience-interest survey, optional email updates, courses and resources, and EchoStory.
 - `/privacy.html`: privacy policy, analytics consent reset, and email contact.
 - `/lab/` and `/lab/reserva/`: retired pages retained only as client-side redirects to the homepage. Redirects preserve query parameters, including Instagram UTM tags, and discard obsolete section anchors. Without JavaScript, a meta refresh and home link provide a fallback, but campaign query forwarding requires JavaScript.
 
@@ -81,6 +82,24 @@ People can vote without an email. Email updates require an explicit Yes answer, 
 Run the consent, attribution, and page-priority checks with `node --test tests/*.test.cjs`.
 
 Instagram bio link: `https://armandocode.com/?utm_source=instagram&utm_medium=social&utm_campaign=bio`. Use a distinct `utm_campaign` or `utm_content` for individual posts.
+
+## MelonPlace Store
+
+The homepage Courses & Resources section links to the published avatar course
+and the Armando Code MelonPlace storefront. The Instagram AI course is a
+coming-soon preview with no purchase or private-admin link. Enable its product
+link only after publication, payment, and delivery have been verified.
+
+Outgoing store links use `utm_source=armandocode.com`, `utm_medium=website`,
+`utm_campaign=courses`, and placement-specific `utm_content`. They do not copy
+incoming query parameters or visitor identifiers. Existing consent-gated
+analytics records `store_visit` events. These tags do not by themselves verify
+cross-domain purchases or replace MelonPlace's native tracked-link reporting.
+
+Website Spanish links open the Spanish store; English and Portuguese website
+links open the English store. Only Spanish and English storefront language
+values have been verified. Course language is stated separately from website
+language. Cover images are stored locally under `assets/courses/`.
 
 ## Languages
 
