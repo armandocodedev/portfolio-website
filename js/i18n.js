@@ -3,6 +3,13 @@
     const STORAGE_KEY = 'armandocode-language';
     const messages = {
         en: {
+            coursesNav: 'Courses', coursesKicker: 'Learn with Armando Code', coursesHeading: 'Courses & resources',
+            coursesBody: 'Practical ways to turn AI into something you can create.', browseStore: 'Browse the store',
+            courseOnStore: 'In the store', courseComingSoon: 'Coming soon', viewCourse: 'View course', courseNotOnSale: 'Not yet on sale',
+            avatarCourseTitle: 'Create a realistic AI avatar', avatarCourseBody: 'Explore the AI avatar course and its details in the Armando Code store.',
+            avatarCourseAlt: 'AI avatar course cover with an avatar preview and editing panels',
+            instagramCourseTitle: 'Create Instagram content with AI', instagramCourseBody: 'Five written lessons, prompts, and templates to plan seven posts for your brand.',
+            instagramCourseFormat: 'Spanish · Self-paced · Written course', instagramCourseAlt: 'Instagram AI course cover with content previews and a weekly planner',
             language: 'Language', home: 'Home', email: 'Email', brandHome: 'Armando Code home',
             homeTitle: "Armando Code | Help Shape What's Next",
             homeDescription: 'Help shape what comes next at Armando Code: AI courses, tutorials, apps, or videogames. Vote and optionally keep in touch.',
@@ -37,6 +44,13 @@
             restartTitle: 'Change language?', keepLanguage: 'Keep current language', changeLanguage: 'Change language'
         },
         es: {
+            coursesNav: 'Cursos', coursesKicker: 'Aprende con Armando Code', coursesHeading: 'Cursos y recursos',
+            coursesBody: 'Formas prácticas de crear algo propio con IA.', browseStore: 'Explorar la tienda',
+            courseOnStore: 'En la tienda', courseComingSoon: 'Próximamente', viewCourse: 'Ver curso', courseNotOnSale: 'Aún no está a la venta',
+            avatarCourseTitle: 'Crea un avatar realista con IA', avatarCourseBody: 'Explora el curso de avatares con IA y sus detalles en la tienda de Armando Code.',
+            avatarCourseAlt: 'Portada del curso de avatares con IA con una vista previa y paneles de edición',
+            instagramCourseTitle: 'Crea contenido para Instagram con IA', instagramCourseBody: 'Cinco lecciones escritas, prompts y plantillas para planificar siete publicaciones para tu marca.',
+            instagramCourseFormat: 'Español · A tu ritmo · Curso escrito', instagramCourseAlt: 'Portada del curso de Instagram con IA con publicaciones y un planificador semanal',
             language: 'Idioma', home: 'Inicio', email: 'Correo', brandHome: 'Inicio de Armando Code',
             homeTitle: 'Armando Code | Ayuda a decidir qué viene',
             homeDescription: 'Ayuda a decidir qué crear en Armando Code: cursos de IA, tutoriales, apps o videojuegos. Vota y, si quieres, recibe novedades.',
@@ -71,6 +85,13 @@
             restartTitle: '¿Cambiar el idioma?', keepLanguage: 'Mantener idioma actual', changeLanguage: 'Cambiar idioma'
         },
         'pt-BR': {
+            coursesNav: 'Cursos', coursesKicker: 'Aprenda com Armando Code', coursesHeading: 'Cursos e recursos',
+            coursesBody: 'Formas práticas de criar algo seu com IA.', browseStore: 'Explorar a loja',
+            courseOnStore: 'Na loja', courseComingSoon: 'Em breve', viewCourse: 'Ver curso', courseNotOnSale: 'Ainda não está à venda',
+            avatarCourseTitle: 'Crie um avatar realista com IA', avatarCourseBody: 'Explore o curso de avatares com IA e seus detalhes na loja do Armando Code.',
+            avatarCourseAlt: 'Capa do curso de avatares com IA com uma prévia e painéis de edição',
+            instagramCourseTitle: 'Crie conteúdo para Instagram com IA', instagramCourseBody: 'Cinco aulas escritas, prompts e modelos para planejar sete publicações para sua marca.',
+            instagramCourseFormat: 'Espanhol · No seu ritmo · Curso escrito', instagramCourseAlt: 'Capa do curso de Instagram com IA com publicações e um planejador semanal',
             language: 'Idioma', home: 'Início', email: 'E-mail', brandHome: 'Início do Armando Code',
             homeTitle: 'Armando Code | Ajude a escolher o próximo passo',
             homeDescription: 'Ajude a decidir o que criar no Armando Code: cursos de IA, tutoriais, apps ou jogos. Vote e, se quiser, receba novidades.',
