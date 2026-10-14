@@ -86,9 +86,22 @@ Instagram bio link: `https://armandocode.com/?utm_source=instagram&utm_medium=so
 ## MelonPlace Store
 
 The homepage Courses & Resources section links to the published avatar course
-and the Armando Code MelonPlace storefront. The Instagram AI course is a
-coming-soon preview with no purchase or private-admin link. Enable its product
-link only after publication, payment, and delivery have been verified.
+and the Armando Code MelonPlace storefront. The Instagram AI course links to its
+published USD 9 offer. Payment is coordinated with the seller and Google Drive
+access is granted manually after confirmation.
+
+The free Spanish mini-course at `/courses/primeros-pasos-ia/` includes four lessons,
+ten explained questions, retries, and browser-local progress. All lessons and
+at least 8/10 unlock a self-reported completion certificate. The certificate is
+not accredited, supervised, identity-verified, signed, or backed by a registry.
+Its separate viewer loads no analytics. Sharing explicitly exposes the entered
+name, score and date in a URL fragment; recipients can modify it, and shared
+links cannot be revoked. PNG export and browser print-to-PDF are available.
+
+Course analytics requires the existing consent. Events: `course_opened`,
+`course_lesson_completed`, `course_quiz_submitted`, `course_completed`, and
+`certificate_created`. No names or individual answers are sent. Learners can
+finish without consent or registration. Storage failures fall back to memory.
 
 Outgoing store links use `utm_source=armandocode.com`, `utm_medium=website`,
 `utm_campaign=courses`, and placement-specific `utm_content`. They do not copy
