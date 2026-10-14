@@ -1,0 +1,41 @@
+:root { color-scheme: light; --ink:#172a29; --muted:#516361; --line:#d4dfdc; --green:#126357; --paper:#fff; --bg:#f4f7f6; }
+* { box-sizing:border-box; letter-spacing:0; }
+html { scroll-behavior:smooth; scroll-padding-top:5rem; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 system-ui,sans-serif; }
+a { color:var(--green); text-underline-offset:3px; }
+button,.button { display:inline-block; border:1px solid var(--green); border-radius:6px; padding:11px 17px; font:600 15px/1.4 system-ui,sans-serif; background:var(--green); color:white; text-decoration:none; cursor:pointer; overflow-wrap:anywhere; }
+button:disabled { background:#e0e7e4; color:#52645f; border-color:#a5b4ae; cursor:default; }
+button.quiet { background:transparent; color:var(--green); }
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible { outline:3px solid #b04b35; outline-offset:4px; }
+header { min-height:72px; padding:16px max(20px,calc((100% - 1240px)/2)); background:white; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+.brand { font-size:15px; font-weight:800; color:var(--ink); margin-right:auto; text-decoration:none; }
+.workspace { display:grid; grid-template-columns:280px minmax(0,760px); gap:64px; max-width:1184px; margin:36px auto; padding:0 24px; }
+aside { position:sticky; top:24px; align-self:start; }
+h1 { font-size:30px; line-height:1.2; margin:12px 0; }
+h2 { font-size:28px; line-height:1.25; margin:8px 0 24px; }
+h3 { font-size:19px; line-height:1.4; margin-top:28px; }
+.eyebrow { font-size:12px; font-weight:750; color:var(--green); }
+.small { font-size:13px; }.muted,.small { color:var(--muted); }
+progress { width:100%; height:9px; accent-color:var(--green); }
+nav { display:grid; margin:24px 0; }
+nav a { padding:10px 0; border-bottom:1px solid var(--line); font-size:14px; text-decoration:none; }
+.content { min-width:0; }
+.course-cover { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:6px; }
+section { padding:36px 0; border-bottom:1px solid var(--line); }
+blockquote { margin:24px 0; border-left:4px solid #c9684b; padding:12px 20px; background:#fbeee8; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; padding:20px; background:#e7efec; border-left:3px solid var(--green); font:14px/1.7 ui-monospace,monospace; }
+li { margin-bottom:12px; }ul,ol { padding-left:24px; }
+details { margin:20px 0; padding:14px 0; border-block:1px solid var(--line); }summary { cursor:pointer; font-weight:600; }
+fieldset { border:0; border-bottom:1px solid var(--line); margin:0; padding:24px 0; min-width:0; }
+legend { padding:0; font-weight:650; max-width:100%; }
+fieldset label { display:flex; align-items:flex-start; gap:12px; padding:12px; margin:7px 0; background:white; border:1px solid var(--line); border-radius:6px; cursor:pointer; }
+input[type=radio],input[type=checkbox] { flex:none; width:18px; height:18px; margin:4px 0; accent-color:var(--green); }
+.feedback { font-size:14px; padding:12px; background:#e1eee8; border-left:3px solid var(--green); }.feedback.wrong { background:#fff0e9; border-color:#b04b35; }
+#quiz>button { margin:22px 8px 0 0; }#quiz-result { font-weight:650; margin-top:20px; }
+#certificate-form { display:grid; gap:14px; }input[type=text],input:not([type]) { width:100%; min-width:0; padding:12px; border:1px solid #7d9189; border-radius:4px; font:inherit; }
+.check { display:flex; align-items:flex-start; gap:12px; font-size:14px; }#certificate-error { color:#9c321a; }
+footer { max-width:1184px; margin:auto; padding:28px 24px; font-size:13px; }
+.cookie-banner { position:fixed; bottom:16px; left:16px; right:16px; max-width:750px; margin:auto; padding:20px; background:white; border:1px solid #748d82; box-shadow:0 4px 24px #18362b22; z-index:5; border-radius:6px; }
+.cookie-banner[hidden],[hidden] { display:none!important; }.cookie-banner p { margin-top:0; }.cookie-banner button { margin:4px 8px 0 0; }
+@media(max-width:800px) { .workspace { display:block; margin-top:24px; padding:0 20px; }aside { position:static; margin-bottom:28px; }nav { grid-template-columns:1fr 1fr; gap:0 20px; }h1 { font-size:30px; }h2 { font-size:25px; }header { gap:15px; padding:16px 20px; }header a { font-size:13px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }

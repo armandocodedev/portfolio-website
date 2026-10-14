@@ -1,0 +1,13 @@
+.certificate-main { max-width:1050px; margin:40px auto; padding:0 24px 48px; }
+#certificate { background:white; border:1px solid #b7ccc4; border-top:10px solid #126357; padding:42px; text-align:center; overflow-wrap:anywhere; }
+.certificate-top,.certificate-bottom { display:flex; justify-content:space-between; gap:20px; font-size:12px; font-weight:700; text-align:left; }
+.certificate-top { margin-bottom:50px; }.certificate-bottom { border-top:1px solid #d4dfdc; padding-top:20px; margin-top:32px; }
+#certificate h1 { font-size:38px; margin:16px 0 8px; }#certificate .subtitle { font-size:18px; margin-bottom:38px; }
+#certificate-name { font-size:32px; color:#126357; margin:8px auto 24px; line-height:1.35; white-space:pre-wrap; }
+dl { display:flex; justify-content:center; gap:32px; flex-wrap:wrap; padding:22px 0; margin:24px 0; border-block:1px solid #d4dfdc; }dt { font-size:12px; color:#516361; }dd { margin:4px 0 0; font-weight:650; font-size:15px; }
+.disclaimer { font-size:12px; color:#516361; max-width:700px; margin:auto; }
+.certificate-actions { display:flex; gap:12px; flex-wrap:wrap; margin:24px 0; }
+#share-link { margin-top:8px; font-size:13px; }
+@media(max-width:600px) { .certificate-main { padding:0 16px 32px; margin:24px auto; }#certificate { padding:24px 18px; }.certificate-top { margin-bottom:30px; }.certificate-top,.certificate-bottom { font-size:10px; }#certificate h1 { font-size:28px; }#certificate-name { font-size:26px; }dl { gap:16px; }.desktop-break { display:none; } }
+@page { size:A4 landscape; margin:12mm; }
+@media print { body { background:white; }header,.certificate-actions,#share-link,label,.small,#share-status,.certificate-main>.button,#certificate-content>.button { display:none!important; }.certificate-main { max-width:none; margin:0; padding:0; }#certificate { break-inside:avoid; padding:24px; border:1px solid #126357; }#certificate .certificate-top { margin-bottom:20px; }#certificate .subtitle { margin-bottom:20px; }#certificate h1 { font-size:30px; }#certificate-name { font-size:26px; } }
