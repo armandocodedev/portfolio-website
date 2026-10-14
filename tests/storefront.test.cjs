@@ -7,18 +7,27 @@ const vm = require('node:vm');
 const home = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
 const source = fs.readFileSync(path.join(__dirname, '../js/storefront.js'), 'utf8');
 
-test('unreleased course cannot route visitors into a private preview or checkout', () => {
+test('published Instagram course links to the public product with distinct click attribution', () => {
     const card = home.split('<article class="course-card" aria-labelledby="instagram-course-title">')[1].split('</article>')[0];
-    assert.match(card, /courseComingSoon/);
-    assert.match(card, /courseNotOnSale/);
-    assert.doesNotMatch(card, /<a\b|<button\b/);
+    assert.match(card, /data-i18n="courseOnStore"/);
+    assert.match(card, /data-i18n="viewCourse"/);
+    assert.doesNotMatch(card, /courseComingSoon|courseNotOnSale|upcoming/);
+    const href = card.match(/<a\b[^>]*href="([^"]+)"/)[1].replaceAll('&amp;', '&');
+    const url = new URL(href);
+    assert.equal(url.origin, 'https://armandocode.melonplace.com');
+    assert.equal(url.pathname, '/accion/crea-contenido-para-instagram-con-ia');
+    assert.equal(url.searchParams.get('utm_content'), 'instagram_course');
+    assert.match(card, /data-analytics-event="store_visit"/);
+    assert.match(card, /data-app-slug="crea-contenido-para-instagram-con-ia"/);
+    assert.match(card, /data-cta="instagram_course"/);
     assert.doesNotMatch(home, /melonplace\.com\/admin/);
 });
 
 test('store destinations retain campaign attribution and only verified language values', () => {
     const links = [
         { href: 'https://armandocode.melonplace.com/?utm_source=armandocode.com&utm_medium=website&utm_campaign=courses&utm_content=browse_store' },
-        { href: 'https://armandocode.melonplace.com/accion/course-ai-generate-avatar?utm_source=armandocode.com&utm_medium=website&utm_campaign=courses&utm_content=avatar_course' }
+        { href: 'https://armandocode.melonplace.com/accion/course-ai-generate-avatar?utm_source=armandocode.com&utm_medium=website&utm_campaign=courses&utm_content=avatar_course' },
+        { href: 'https://armandocode.melonplace.com/accion/crea-contenido-para-instagram-con-ia?utm_source=armandocode.com&utm_medium=website&utm_campaign=courses&utm_content=instagram_course' }
     ];
     let language = 'es';
     let onLanguageChange;
@@ -47,6 +56,6 @@ test('store destinations retain campaign attribution and only verified language 
 test('course integration preserves audience survey priority and uses consent-gated tracking', () => {
     assert.ok(home.indexOf('id="community"') < home.indexOf('id="courses"'));
     assert.match(home, /href="#courses"/);
-    assert.equal((home.match(/data-store-link data-analytics-event="store_visit"/g) || []).length, 2);
+    assert.equal((home.match(/data-store-link data-analytics-event="store_visit"/g) || []).length, 3);
     assert.doesNotMatch(source, /fetch\(|localStorage|sessionStorage|posthog/);
 });
