@@ -23,10 +23,10 @@
         try {
             await document.fonts.ready;
             const loadLogo = src => new Promise((resolve, reject) => { const image = new Image(); image.onload = () => resolve(image); image.onerror = reject; image.src = src; });
-            const [mark, wordmark] = await Promise.all([loadLogo('/assets/brand/armandocode-mark.svg'), loadLogo('/assets/brand/armandocode-wordmark-light.svg')]);
+            const logo = await loadLogo('/assets/brand/library/armandocode-logo-horizontal-dark-color.svg');
             const canvas = document.createElement('canvas'); canvas.width = 1600; canvas.height = 1120;
             const ctx = canvas.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,1600,1120); ctx.fillStyle = '#7c15a7'; ctx.fillRect(0,0,1600,22); ctx.fillStyle='#b710c2';ctx.fillRect(1120,0,480,22);ctx.strokeStyle = '#e2d7eb'; ctx.strokeRect(24,24,1552,1072);
-            ctx.drawImage(mark,686,55,58,67);ctx.drawImage(wordmark,760,60,154,58);
+            ctx.drawImage(logo,679,55,242,67);
             function line(text,y,size,color='#1f2937',weight='400',family='Inter') { ctx.textAlign='center'; ctx.fillStyle=color; ctx.font=`${weight} ${size}px "${family}", sans-serif`; ctx.fillText(text,800,y); }
             line('CONSTANCIA DE FINALIZACIÓN',190,22,'#7c15a7','600','IBM Plex Mono');
             line('Primeros pasos con IA',275,58,'#1f2937','700','Space Grotesk'); line('Prompts útiles y uso responsable',325,28);

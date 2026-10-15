@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const crypto = require('node:crypto');
 const core = require('../courses/primeros-pasos-ia/core.js');
 test('quiz has ten explained questions and one valid answer each', () => {
     assert.equal(core.questions.length,10);
@@ -37,7 +38,7 @@ test('certificate viewer has no analytics and uses text-safe rendering', () => {
 test('course and certificate reuse real brand assets and website typography', () => {
     for(const file of ['index.html','certificate.html']) {
         const html=fs.readFileSync(path.join(__dirname,'../courses/primeros-pasos-ia',file),'utf8');
-        for(const asset of ['armandocode-mark.svg','armandocode-wordmark-light.svg','armandocode-wordmark-dark.svg']) assert.ok(html.includes('/assets/brand/'+asset));
+        for(const asset of ['armandocode-logo-horizontal-light-color.svg','armandocode-logo-horizontal-dark-color.svg']) assert.ok(html.includes('/assets/brand/library/'+asset));
         assert.match(html,/\/css\/course-brand\.css/);
         assert.match(html,/Space\+Grotesk/);
         assert.match(html,/theme-toggle/);
@@ -46,8 +47,31 @@ test('course and certificate reuse real brand assets and website typography', ()
     const site=fs.readFileSync(path.join(__dirname,'../css/style.css'),'utf8');
     for(const color of ['#7c15a7','#b710c2','#d894ff']) { assert.ok(brand.includes(color)); assert.ok(site.includes(color)); }
     const certificate=fs.readFileSync(path.join(__dirname,'../courses/primeros-pasos-ia/certificate.js'),'utf8');
-    assert.match(certificate,/ctx\.drawImage\(mark/); assert.match(certificate,/ctx\.drawImage\(wordmark/);
+    assert.match(certificate,/ctx\.drawImage\(logo/);assert.match(certificate,/library\/armandocode-logo-horizontal-dark-color\.svg/);
     assert.doesNotMatch(certificate,/#126357|#172a29/);
+});
+
+test('course palette and type agree with the imported brand-library reference', () => {
+    const tokens=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/brand/library/brand-tokens.json'),'utf8'));
+    const css=fs.readFileSync(path.join(__dirname,'../css/course-brand.css'),'utf8');
+    const roots=css.match(/:root\s*\{([^}]+)\}/)[1];
+    const dark=css.match(/:root\[data-theme="dark"\]\s*\{([^}]+)\}/)[1];
+    function declarations(body) { return Object.fromEntries([...body.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)].map(m=>[m[1],m[2].replaceAll(' ','').toLowerCase()])); }
+    const lightValues=declarations(roots), darkValues={...lightValues,...declarations(dark)};
+    for(const key of ['--primary-color','--accent-color','--brand-soft-color','--text-color','--muted-color','--page-bg','--panel-bg','--panel-soft-bg','--line-color','--header-bg','--font-body','--font-heading','--font-mono']) assert.ok(key in lightValues,key);
+    for(const [mode,values] of [['light',lightValues],['dark',darkValues]]) {
+        for(const [key,value] of Object.entries(tokens.websiteCssVariables[mode])) if(key in values) assert.equal(values[key],value.replaceAll(' ','').toLowerCase(),`${mode} ${key}`);
+    }
+    assert.equal(darkValues['--cta-bg'],tokens.observedComponents.homepageDarkCta.background.toLowerCase());
+    assert.equal(darkValues['--cta-text'],tokens.observedComponents.homepageDarkCta.text.toLowerCase());
+});
+
+test('canonical logos are unchanged copies of the audited brand library', () => {
+    const expected={
+        'armandocode-logo-horizontal-light-color.svg':'7ae63209d5393bd8d7518469f9d2e63070560d984e883748d6d3b5d9ac5d1851',
+        'armandocode-logo-horizontal-dark-color.svg':'9d16ffa2e10ddb8d8668ae7b79b7977d3db55ae4c637b3ce02b710e88de9fc75'
+    };
+    for(const [file,hash] of Object.entries(expected)) assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(__dirname,'../assets/brand/library',file))).digest('hex'),hash);
 });
 
 test('course theme follows the existing site preference and persists changes', () => {
