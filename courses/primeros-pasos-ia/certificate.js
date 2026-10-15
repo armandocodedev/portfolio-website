@@ -19,22 +19,26 @@
             else { shareLink.focus(); shareLink.select(); status.textContent = 'El enlace está seleccionado para copiarlo.'; }
         } catch (error) { if (error.name !== 'AbortError') { shareLink.focus(); shareLink.select(); status.textContent = 'No se pudo compartir automáticamente. Puedes copiar el enlace seleccionado.'; } }
     });
-    document.getElementById('download').addEventListener('click', () => {
+    document.getElementById('download').addEventListener('click', async () => {
         try {
+            await document.fonts.ready;
+            const loadLogo = src => new Promise((resolve, reject) => { const image = new Image(); image.onload = () => resolve(image); image.onerror = reject; image.src = src; });
+            const [mark, wordmark] = await Promise.all([loadLogo('/assets/brand/armandocode-mark.svg'), loadLogo('/assets/brand/armandocode-wordmark-light.svg')]);
             const canvas = document.createElement('canvas'); canvas.width = 1600; canvas.height = 1120;
-            const ctx = canvas.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,1600,1120); ctx.fillStyle = '#126357'; ctx.fillRect(0,0,1600,22); ctx.strokeStyle = '#b7ccc4'; ctx.strokeRect(24,24,1552,1072);
-            function line(text,y,size,color='#172a29',weight='400') { ctx.textAlign='center'; ctx.fillStyle=color; ctx.font=`${weight} ${size}px sans-serif`; ctx.fillText(text,800,y); }
-            line('ARMANDO CODE',100,25,'#172a29','700'); line('CONSTANCIA DE FINALIZACIÓN',190,22,'#126357','700');
-            line('Primeros pasos con IA',275,58,'#172a29','700'); line('Prompts útiles y uso responsable',325,28);
+            const ctx = canvas.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,1600,1120); ctx.fillStyle = '#7c15a7'; ctx.fillRect(0,0,1600,22); ctx.fillStyle='#b710c2';ctx.fillRect(1120,0,480,22);ctx.strokeStyle = '#e2d7eb'; ctx.strokeRect(24,24,1552,1072);
+            ctx.drawImage(mark,686,55,58,67);ctx.drawImage(wordmark,760,60,154,58);
+            function line(text,y,size,color='#1f2937',weight='400',family='Inter') { ctx.textAlign='center'; ctx.fillStyle=color; ctx.font=`${weight} ${size}px "${family}", sans-serif`; ctx.fillText(text,800,y); }
+            line('CONSTANCIA DE FINALIZACIÓN',190,22,'#7c15a7','600','IBM Plex Mono');
+            line('Primeros pasos con IA',275,58,'#1f2937','700','Space Grotesk'); line('Prompts útiles y uso responsable',325,28);
             line('Se deja constancia de que',420,24);
-            let size=54; do { ctx.font=`700 ${size}px sans-serif`; if(ctx.measureText(certificate.name).width<=1400) break; size--; } while(size>18);
-            line(certificate.name,495,size,'#126357','700');
+            let size=54; do { ctx.font=`700 ${size}px "Space Grotesk", sans-serif`; if(ctx.measureText(certificate.name).width<=1400) break; size--; } while(size>18);
+            line(certificate.name,495,size,'#7c15a7','700','Space Grotesk');
             line('declara haber completado las cuatro lecciones y la autoevaluación',575,25); line('del minicurso gratuito de Armando Code.',615,25);
-            line(`Autoevaluación: ${certificate.score}/10  ·  Fecha declarada: ${date}`,710,25,'#172a29','700'); line('Español · A tu ritmo · Edición 2026',760,23);
-            line('Finalización autodeclarada. Sin verificación de identidad ni examen supervisado.',865,20,'#516361');
-            line('No es una titulación oficial ni una certificación profesional.',900,20,'#516361');
-            line('No existe un registro verificable; los datos compartidos pueden ser modificados.',935,20,'#516361');
-            line('Curso gratuito: armandocode.com/courses/primeros-pasos-ia/',1030,23,'#126357','700');
+            line(`Autoevaluación: ${certificate.score}/10  ·  Fecha declarada: ${date}`,710,25,'#1f2937','700'); line('Español · A tu ritmo · Edición 2026',760,23);
+            line('Finalización autodeclarada. Sin verificación de identidad ni examen supervisado.',865,20,'#667085');
+            line('No es una titulación oficial ni una certificación profesional.',900,20,'#667085');
+            line('No existe un registro verificable; los datos compartidos pueden ser modificados.',935,20,'#667085');
+            line('Curso gratuito: armandocode.com/courses/primeros-pasos-ia/',1030,23,'#7c15a7','600','IBM Plex Mono');
             canvas.toBlob(blob => { if(!blob) { document.getElementById('share-status').textContent='No se pudo crear la imagen. Prueba imprimir o guardar como PDF.'; return; }const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='armando-code-constancia-ia.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000); },'image/png');
         } catch { document.getElementById('share-status').textContent='No se pudo crear la imagen. Prueba imprimir o guardar como PDF.'; }
     });

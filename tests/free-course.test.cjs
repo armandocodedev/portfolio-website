@@ -2,6 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const vm = require('node:vm');
 const core = require('../courses/primeros-pasos-ia/core.js');
 test('quiz has ten explained questions and one valid answer each', () => {
     assert.equal(core.questions.length,10);
@@ -31,4 +32,37 @@ test('certificate viewer has no analytics and uses text-safe rendering', () => {
     assert.doesNotMatch(html+js,/analytics\.js|posthog|innerHTML|insertAdjacentHTML/);
     assert.match(html,/noindex,nofollow/);assert.match(html,/no-referrer/);assert.match(html,/autodeclarada/);
     assert.match(js,/\.textContent = certificate.name/);
+});
+
+test('course and certificate reuse real brand assets and website typography', () => {
+    for(const file of ['index.html','certificate.html']) {
+        const html=fs.readFileSync(path.join(__dirname,'../courses/primeros-pasos-ia',file),'utf8');
+        for(const asset of ['armandocode-mark.svg','armandocode-wordmark-light.svg','armandocode-wordmark-dark.svg']) assert.ok(html.includes('/assets/brand/'+asset));
+        assert.match(html,/\/css\/course-brand\.css/);
+        assert.match(html,/Space\+Grotesk/);
+        assert.match(html,/theme-toggle/);
+    }
+    const brand=fs.readFileSync(path.join(__dirname,'../css/course-brand.css'),'utf8');
+    const site=fs.readFileSync(path.join(__dirname,'../css/style.css'),'utf8');
+    for(const color of ['#7c15a7','#b710c2','#d894ff']) { assert.ok(brand.includes(color)); assert.ok(site.includes(color)); }
+    const certificate=fs.readFileSync(path.join(__dirname,'../courses/primeros-pasos-ia/certificate.js'),'utf8');
+    assert.match(certificate,/ctx\.drawImage\(mark/); assert.match(certificate,/ctx\.drawImage\(wordmark/);
+    assert.doesNotMatch(certificate,/#126357|#172a29/);
+});
+
+test('course theme follows the existing site preference and persists changes', () => {
+    const source=fs.readFileSync(path.join(__dirname,'../courses/primeros-pasos-ia/brand.js'),'utf8');
+    for(const blocked of [false,true]) {
+        const storage={};let click;
+        const root={dataset:{}};
+        const button={textContent:'',setAttribute(){},addEventListener(event,handler){click=handler;}};
+        vm.runInNewContext(source,{
+            document:{documentElement:root,querySelectorAll:()=>[button]},
+            window:{matchMedia:()=>({matches:false})},
+            localStorage:{getItem(key){assert.equal(key,'portfolio-theme');if(blocked)throw Error('blocked');return 'dark';},setItem(key,value){if(blocked)throw Error('blocked');storage[key]=value;}}
+        });
+        assert.equal(root.dataset.theme,blocked?'light':'dark');
+        click();assert.equal(root.dataset.theme,blocked?'dark':'light');
+        if(!blocked)assert.equal(storage['portfolio-theme'],'light');
+    }
 });
