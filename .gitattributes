@@ -1,0 +1,3 @@
+# Preserve the canonical brand-library files byte-for-byte on Windows too.
+assets/brand/library/*.svg -text
+assets/brand/library/brand-tokens.json -text
