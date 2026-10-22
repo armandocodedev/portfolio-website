@@ -3,9 +3,20 @@ const POSTHOG_PROJECT_TOKEN = 'phc_pf7Jq9LC438Q3UVQWFWh2Cs7c93ohEcrJQ9eKUJmxD5J'
 const ANALYTICS_CONSENT_KEY = 'armandocode-posthog-consent';
 const CAMPAIGN_STORAGE_KEY = 'armandocode-campaign-context';
 let posthogStarted = false;
+let consentChoice;
+let pageviewCaptured = false;
+let posthogReady = false;
+let courseStartCaptured = false;
+
+function isProductionAnalyticsHost() {
+    return ['armandocode.com', 'www.armandocode.com'].includes(window.location.hostname);
+}
 
 function hasAnalyticsConsent() {
-    return localStorage.getItem(ANALYTICS_CONSENT_KEY) === 'accepted';
+    if (!isProductionAnalyticsHost()) return false;
+    if (consentChoice) return consentChoice === 'accepted';
+    try { return localStorage.getItem(ANALYTICS_CONSENT_KEY) === 'accepted'; }
+    catch { return false; }
 }
 
 function getCampaignContext() {
@@ -14,7 +25,7 @@ function getCampaignContext() {
         page_path: window.location.pathname,
         page_location: window.location.origin + window.location.pathname,
         referrer: document.referrer ? new URL(document.referrer).origin : 'direct',
-        site_area: window.location.pathname.startsWith('/lab') ? 'lab' : 'website',
+        site_area: window.location.pathname.startsWith('/courses/') ? 'course' : window.location.pathname.startsWith('/lab') ? 'lab' : 'website',
         site_language: window.ArmandoI18n?.getLanguage() || 'en'
     };
 
@@ -51,8 +62,10 @@ function readCampaignContext() {
 }
 
 function loadPostHog() {
+    if (!hasAnalyticsConsent()) return;
     if (posthogStarted) {
         window.posthog.opt_in_capturing();
+        if (posthogReady && !pageviewCaptured) captureCurrentPage();
         return;
     }
     posthogStarted = true;
@@ -78,6 +91,7 @@ function loadPostHog() {
         persistence: 'localStorage',
         before_send: event => hasAnalyticsConsent() ? event : null,
         loaded: client => {
+            posthogReady = true;
             if (!hasAnalyticsConsent()) {
                 client.opt_out_capturing();
                 return;
@@ -85,29 +99,41 @@ function loadPostHog() {
             client.opt_in_capturing();
             client.register({
                 site_name: 'armandocode',
-                site_environment: ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname) ? 'preview' : 'production',
+                site_environment: 'production',
                 ...readCampaignContext()
             });
-            client.capture('$pageview', readCampaignContext());
+            captureCurrentPage(client);
         }
     });
 }
 
+function captureCurrentPage(client = window.posthog) {
+    client.capture('$pageview', readCampaignContext());
+    pageviewCaptured = true;
+    if (!courseStartCaptured && ['/courses/primeros-pasos-ia/', '/courses/primeros-pasos-ia/index.html'].includes(window.location.pathname)) {
+        client.capture('course_started', { ...readCampaignContext(), course_id: 'primeros-pasos-ia-v1' });
+        courseStartCaptured = true;
+    }
+}
+
 function setAnalyticsConsent(choice) {
-    localStorage.setItem(ANALYTICS_CONSENT_KEY, choice);
+    consentChoice = choice;
+    try { localStorage.setItem(ANALYTICS_CONSENT_KEY, choice); } catch { /* Keep the explicit choice for this page. */ }
     document.querySelector('.cookie-banner')?.setAttribute('hidden', '');
 
     if (choice === 'accepted') {
         loadPostHog();
     } else if (posthogStarted) {
         window.posthog.opt_out_capturing();
+        pageviewCaptured = false;
     }
 }
 
 function initAnalyticsConsent() {
     storeCampaignContext();
 
-    const savedChoice = localStorage.getItem(ANALYTICS_CONSENT_KEY);
+    let savedChoice;
+    try { savedChoice = localStorage.getItem(ANALYTICS_CONSENT_KEY); } catch { /* Show the banner when storage is unavailable. */ }
     const banner = document.querySelector('.cookie-banner');
 
     if (savedChoice === 'accepted') {
@@ -125,13 +151,26 @@ function initAnalyticsConsent() {
     document.querySelectorAll('[data-reset-cookie-choice]').forEach(button => {
         button.addEventListener('click', () => {
             window.posthog?.opt_out_capturing();
-            localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+            consentChoice = 'rejected';
+            try { localStorage.removeItem(ANALYTICS_CONSENT_KEY); } catch {}
             window.location.reload();
         });
     });
 
     initTrackedLinks();
     initAudienceSurvey();
+    window.addEventListener('pagehide', () => {
+        if (pageviewCaptured && hasAnalyticsConsent()) {
+            window.posthog.capture('$pageleave', readCampaignContext(), { transport: 'sendBeacon' });
+        }
+        pageviewCaptured = false;
+    });
+    window.addEventListener('pageshow', event => {
+        if (event.persisted && hasAnalyticsConsent() && posthogStarted && !pageviewCaptured) {
+            window.posthog.capture('$pageview', readCampaignContext());
+            pageviewCaptured = true;
+        }
+    });
     document.addEventListener('armandocode:languagechange', () => {
         sendAnalyticsEvent('language_changed');
         document.querySelectorAll('[data-survey-section]').forEach(container => {
@@ -161,10 +200,18 @@ function initTrackedLinks() {
             app_slug: element.dataset.appSlug,
             project_type: element.dataset.projectType,
             cta: element.dataset.cta,
-            destination: element.protocol === 'mailto:' ? 'email' : (element.getAttribute('href') || ''),
+            destination: safeAnalyticsDestination(element),
             link_text: element.textContent.trim()
         });
     });
+}
+
+function safeAnalyticsDestination(element) {
+    if (element.protocol === 'mailto:') return 'email';
+    try {
+        const url = new URL(element.getAttribute('href'), window.location.origin);
+        return url.origin + url.pathname;
+    } catch { return ''; }
 }
 
 function getAudienceSurveyUrl(container) {

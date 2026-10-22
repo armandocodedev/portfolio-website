@@ -73,13 +73,29 @@ This project is available for personal use.
 
 The website uses PostHog project `497274` (US region). Its public browser token and SDK configuration live in `js/analytics.js`; personal API keys must never be committed. Website tracking waits for the `armandocode-posthog-consent` choice, independently of the earlier GA4 consent. Autocapture, session replay, and automatic survey popups are disabled on this website.
 
-Current tracked events include `$pageview`, `select_project`, `contact_click`, and `survey_opened`. Historical `open_lab` and `cta_click` events remain in PostHog. Properties include the current page, `site_name`, `site_area`, `site_environment`, campaign tags, and the selected project/CTA. Local browser checks use `site_environment=preview`; filter to `production` for launch reporting.
+Current tracked events include `$pageview`, `$pageleave`, `select_project`, `contact_click`, and `survey_opened`. Historical `open_lab` and `cta_click` events remain in PostHog. Properties include the current page, `site_name`, `site_area`, `site_environment`, campaign tags, and the selected project/CTA. Production capture is allowlisted to `armandocode.com` and `www.armandocode.com`; localhost and previews do not initialize the SDK. Pagehide sends a consented pageleave, and back-forward cache restoration starts a new pageview. Blocked storage does not prevent the consent controls or independently requested survey from working.
+
+### Conversion definitions
+
+- `course_started`: the actual free course page loaded with analytics consent; distinct from clicking a course link.
+- `course_completed`: all four lessons completed and a passing quiz score, emitted only on the transition to eligibility. This is the primary learning conversion.
+- `certificate_created`: a valid certificate was generated. Do not add this to course completions as a second learner conversion.
+- Hosted `survey sent` with the audience survey ID and `$survey_completed=true`: a fully submitted survey, counted separately from website funnels.
+- `store_visit`, `course_opened`, and `contact_click` measure intent. They are not purchases, enrollments, delivered inquiries, or confirmed newsletter subscriptions.
+
+PostHog has reusable completion actions and a saved outcomes table on the starter dashboard. Internal/test filtering is enabled on all its insights and by default for new reports, preserving the existing internal-team cohort exclusion and excluding loopback hosts with optional ports. Historical test events remain available for debugging. Hosted surveys remain independent of visitor identity and analytics consent; do not fabricate a visit-to-survey funnel. Paid courses currently use manually confirmed payment, so a completed purchase must be recorded by the store/payment workflow, never inferred from an outbound link.
 
 The audience survey is managed at https://us.posthog.com/project/497274/surveys/01a128be-13a6-0000-17ac-1c9d3c1e719f. It was launched with explicit approval on October 10, 2026 (Buenos Aires). It is a hosted form loaded on request from the homepage. The embed forwards campaign tags but does not pass a visitor identifier; responses are not linked to an individual website visitor's activity.
 
 People can vote without an email. Email updates require an explicit Yes answer, followed by an email address. These choices are stored as survey responses, not confirmed mailing-list subscriptions. Email delivery, confirmation, and automated unsubscribing are not configured; requests currently go to the contact email listed in the survey and privacy policy.
 
 Run the consent, attribution, and page-priority checks with `node --test tests/*.test.cjs`.
+
+Run `node --test tests/analytics.browser.cjs` for the isolated Chrome regression.
+It serves local files under a simulated production origin and mocks the PostHog
+SDK. It checks actual course completion, pageleave, and localhost suppression
+without sending production events. Set `PLAYWRIGHT_CHANNEL` to use another
+installed browser channel.
 
 Instagram bio link: `https://armandocode.com/?utm_source=instagram&utm_medium=social&utm_campaign=bio`. Use a distinct `utm_campaign` or `utm_content` for individual posts.
 

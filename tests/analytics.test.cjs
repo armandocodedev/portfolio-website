@@ -6,10 +6,10 @@ const path = require('node:path');
 
 const source = fs.readFileSync(path.join(__dirname, '../js/analytics.js'), 'utf8');
 
-function setup({ consent, savedCampaign, language = 'en' } = {}) {
+function setup({ consent, savedCampaign, language = 'en', hostname = 'armandocode.com', pathname = '/lab/', blockedStorage = false } = {}) {
     const local = new Map([['analytics-consent', 'accepted'], ...(consent ? [['armandocode-posthog-consent', consent]] : [])]);
     const session = new Map(savedCampaign ? [['armandocode-campaign-context', JSON.stringify(savedCampaign)]] : []);
-    const storage = map => ({ getItem: key => map.get(key) ?? null, setItem: (key, value) => map.set(key, value), removeItem: key => map.delete(key) });
+    const storage = map => ({ getItem: key => { if (blockedStorage) throw new Error('blocked'); return map.get(key) ?? null; }, setItem: (key, value) => { if (blockedStorage) throw new Error('blocked'); map.set(key, value); }, removeItem: key => map.delete(key) });
     const listeners = {};
     const scripts = [];
     const captured = [];
@@ -20,7 +20,7 @@ function setup({ consent, savedCampaign, language = 'en' } = {}) {
     const frame = { hidden: true };
     const section = { dataset: { surveyUrl: 'https://us.posthog.com/external_surveys/test' }, querySelector: () => frame };
     const surveyButton = { closest: () => section, addEventListener(name, callback) { this.click = callback; }, hidden: false };
-    const window = { ArmandoI18n: { getLanguage: () => language }, location: { origin: 'https://armandocode.com', hostname: 'armandocode.com', pathname: '/lab/', search: '', reload() { this.reloaded = true; } } };
+    const window = { addEventListener(name, callback) { listeners[name] = callback; }, ArmandoI18n: { getLanguage: () => language }, location: { origin: 'https://' + hostname, hostname, pathname, search: '', reload() { this.reloaded = true; } } };
     const document = {
         referrer: 'https://www.instagram.com/some-path?private=discard',
         createElement: () => ({}),
@@ -129,4 +129,47 @@ test('changing language reloads only an open survey and never bypasses analytics
     assert.equal(new URL(page.frame.src).searchParams.get('display_language'), 'pt-br');
     assert.equal(page.scripts.length, 0);
     assert.equal(page.captured.length, 0);
+});
+
+for (const hostname of ['localhost', '127.0.0.1', '127.1.2.3', '[::1]', 'preview.example.com']) {
+    test('never loads production PostHog on ' + hostname, () => {
+        const page = setup({ hostname, consent: 'accepted' });
+        page.buttons[0].click();
+        page.surveyButton.click();
+        assert.equal(page.scripts.length, 0);
+        assert.equal(page.captured.length, 0);
+    });
+}
+
+test('pageleave pairs with pageview, bfcache restores a new view, and rejection blocks leaves', () => {
+    const page = setup({ consent: 'accepted' });
+    page.finishLoading();
+    page.listeners.pagehide();
+    page.listeners.pagehide();
+    page.listeners.pageshow({ persisted: true });
+    page.buttons[1].click();
+    page.listeners.pagehide();
+    assert.deepEqual(page.captured.map(event => event.name), ['$pageview', '$pageleave', '$pageview']);
+});
+
+test('blocked storage does not break consent or course-start capture', () => {
+    const page = setup({ blockedStorage: true, pathname: '/courses/primeros-pasos-ia/' });
+    assert.equal(page.scripts.length, 0);
+    page.buttons[0].click();
+    page.finishLoading();
+    assert.deepEqual(page.captured.map(event => event.name), ['$pageview', 'course_started']);
+    assert.equal(page.captured[1].properties.site_area, 'course');
+    page.buttons[1].click();
+    page.listeners.pagehide();
+    assert.equal(page.captured.length, 2);
+});
+
+test('outbound store intent strips destination query strings and fragments', () => {
+    const page = setup({ consent: 'accepted' });
+    page.finishLoading();
+    const element = { dataset: { analyticsEvent: 'store_visit' }, protocol: 'https:', textContent: 'Store', getAttribute: () => 'https://armandocode.melonplace.com/offer?email=private@example.com#secret' };
+    page.listeners.click({ target: { closest: () => element } });
+    assert.equal(page.captured[1].name, 'store_visit');
+    assert.equal(page.captured[1].properties.destination, 'https://armandocode.melonplace.com/offer');
+    assert.ok(!page.captured.some(event => event.name === 'purchase'));
 });
